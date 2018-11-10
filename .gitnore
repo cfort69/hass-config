@@ -1,0 +1,60 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.db
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+www/._*
+www/.DS_Store
+inclusiones/.DS_Store
+inclusiones/._*
+inclusiones/automatizaciones/.DS_Store
+inclusiones/automatizaciones/._*
+inclusiones/grupos/.DS_Store
+inclusiones/grupos/._*
+inclusiones/scripts/.DS_Store
+inclusiones/scripts/._*
+inclusiones/sensores/.DS_Store
+inclusiones/sensores/._*
+inclusiones/zonas/.DS_Store
+inclusiones/zonas/._*
+
+
+__pycache__/*
+lib/*
+lib64/*
+bin/*
+share/*
+.ssh/*

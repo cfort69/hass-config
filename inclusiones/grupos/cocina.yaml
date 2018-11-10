@@ -1,0 +1,17 @@
+grupococina:
+  name: Cocina
+  view: yes
+  entities:
+      - group.luzcocina
+      - group.abanicococina
+
+
+luzcocina:
+  name: Luz Cocina
+  entities:
+      - switch.luz_cocina
+
+abanicococina:
+  name: Abanico Cocina
+  entities:
+      - switch.abanico_cocina

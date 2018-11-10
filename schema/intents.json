@@ -1,0 +1,66 @@
+[
+    {
+        "name": "enciende",
+        "auto": true,
+        "contexts": [],
+        "templates": [],
+        "userSays": [],
+        "responses": [
+            {
+                "action": "switch_on",
+                "resetContexts": false,
+                "affectedContexts": [],
+                "parameters": [
+                    {
+                        "name": "switch",
+                        "value": "$switch",
+                        "dataType": "@switch",
+                        "prompts": [],
+                        "required": true,
+                        "isList": false,
+                        "defaultValue": ""
+                    }
+                ],
+                "messages": []
+            }
+        ],
+        "priority": 500000,
+        "fallbackIntent": false,
+        "webhookUsed": true,
+        "webhookForSlotFilling": true,
+        "events": [],
+        "id": "f32a050d-228b-4481-bd5f-8aa61e7027ef"
+    },
+    {
+        "name": "apaga",
+        "auto": true,
+        "contexts": [],
+        "templates": [],
+        "userSays": [],
+        "responses": [
+            {
+                "action": "switch_on",
+                "resetContexts": false,
+                "affectedContexts": [],
+                "parameters": [
+                    {
+                        "name": "switch",
+                        "value": "$switch",
+                        "dataType": "@switch",
+                        "prompts": [],
+                        "required": true,
+                        "isList": false,
+                        "defaultValue": ""
+                    }
+                ],
+                "messages": []
+            }
+        ],
+        "priority": 500000,
+        "fallbackIntent": false,
+        "webhookUsed": true,
+        "webhookForSlotFilling": true,
+        "events": [],
+        "id": "ba821ea0-8e3d-498b-b115-05fc05455393"
+    }
+]

@@ -1,0 +1,27 @@
+Timers:
+  name: Timers
+  view: yes
+  entities:
+      - group.timer_piscina
+      - group.timer_jacuzzi
+
+timer_piscina:
+  name: Piscina
+  entities:
+      - input_number.slider_timer_piscina_horas
+      - input_number.slider_timer_piscina_minutos
+      # - sensor.piscina_timer_duracion
+      # - sensor.piscina_timer_off
+      - input_boolean.dash_piscina
+
+
+timer_jacuzzi:
+  name: Jacuzzi
+  entities:
+      - input_number.slider_timer_jacuzzi_horas
+      - input_number.slider_timer_jacuzzi_minutos
+      - input_boolean.dash_jacuzzi
+
+
+
+

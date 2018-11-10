@@ -1,0 +1,13 @@
+{
+    "data": {
+        "salt": "380767fd1acaedc72eb15a3b8471ead69540bfaba52eda13a30d95156b13b9f1",
+        "users": [
+            {
+                "password": "JDJiJDEyJDJCN2VlYnJkdjFUZVFhdFJuQWppaWVyYklFZHM0YmppdnNneHNiZk9TNE1Cck5OemEwZzUy",
+                "username": "cfort"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

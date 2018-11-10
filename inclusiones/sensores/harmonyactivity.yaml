@@ -1,0 +1,8 @@
+  - platform: template
+    sensors:
+      actividad_habitacion_principal:
+        value_template: '{{ states.remote.habitacion_principal.attributes.current_activity }}'
+        friendly_name: 'Principal'
+      actividad_estudio:
+        value_template: '{{ states.remote.estudio.attributes.current_activity }}'
+        friendly_name: 'Estudio'

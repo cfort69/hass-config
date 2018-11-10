@@ -1,0 +1,113 @@
+#############################################
+#           I L U M I N A C I O N           #
+#############################################
+
+- id: Automatizacion_Luz_Marquesina
+  alias: Automatizacion Luz Marquesina
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_marquesina
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_marquesina
+
+- id: Automatizacion_Luz_Terraza
+  alias: Automatizacion Luz Terraza
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_terraza
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_terraza
+
+- id: Automatizacion_Luz_Comedor
+  alias: Automatizacion Luz Comedor
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_comedor
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_comedor
+
+- id: Automatizacion_Luz_Sala
+  alias: Automatizacion Luz Sala
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_sala
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_sala
+
+- id: Automatizacion_Luz_Comedor_Credenza
+  alias: Automatizacion Luz Comedor Credenza
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_comedor_credenza
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_comedor_credenza
+
+- id: Automatizacion_Luz_Comedor_Lateral
+  alias: Automatizacion Luz Exterior Lateral
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: switch.luz_exterior_lateral
+    to: 'on'
+    for:
+      hours: 5
+      minutes: 0
+  condition:
+  - condition: time
+    after: '18:00:00'
+    before: '23:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_exterior_lateral
+
+

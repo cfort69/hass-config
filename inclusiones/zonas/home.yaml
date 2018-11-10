@@ -1,0 +1,6 @@
+  - name: Home
+    latitude: 18.55745615135625
+    longitude: -68.37061050017405
+    elevation: 20
+    radius: 50
+    icon: mdi:home-assistant

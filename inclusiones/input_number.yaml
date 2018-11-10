@@ -1,0 +1,105 @@
+ac_temperatura_habitacion_principal:
+    name: Temperatura
+    initial: 23
+    min: 18
+    max: 25
+    step: 1
+    icon: mdi:temperature-celsius
+    mode: slider
+ac_temperatura_estudio:
+    name: Temperatura
+    initial: 23
+    min: 18
+    max: 25
+    step: 1
+    icon: mdi:temperature-celsius
+    mode: slider
+ac_temperatura_habitacion_charles:
+    name: Temperatura
+    initial: 23
+    min: 18
+    max: 25
+    step: 1
+    icon: mdi:temperature-celsius
+    mode: slider
+# velocidad_abanico_habitacion_principal:
+#     name: Velocidad Abanico Habitacion Principal
+#     # initial: 0
+#     min: 0
+#     max: 100
+#     step: 10
+#     icon: mdi:speedometer
+#     mode: slider
+# velocidad_abanico_estudio:
+#     name: Velocidad Abanico Estudio
+#     # initial: 0
+#     min: 0
+#     max: 100
+#     step: 10
+#     icon: mdi:speedometer
+#     mode: slider
+# velocidad_abanico_habitacion_charles:
+#     name: Velocidad Abanico Habitacion Charles
+#     # initial: 0
+#     min: 0
+#     max: 100
+#     step: 10
+#     icon: mdi:speedometer
+#     mode: slider
+# intensidad_luz_estudio:
+#     name: Intensidad Luz Estudio
+#     # initial: 0
+#     min: 0
+#     max: 100
+#     step: 10
+#     mode: slider
+sleep_timer_habitacion_principal:
+    name: Sleep Timer Habitacion Principal
+    initial: 30
+    min: 0
+    max: 120
+    step: 15
+    mode: slider
+slider_timer_piscina_horas:
+    name: Slider Timer Piscina Horas
+    initial: 4
+    min: 0
+    max: 24
+    step: 1
+    mode: slider
+slider_timer_piscina_minutos:
+    name: Slider Timer Piscina Minutos
+    initial: 30
+    min: 0
+    max: 55
+    step: 5
+    mode: slider
+slider_timer_jacuzzi_horas:
+    name: Slider Timer Jacuzzi Horas
+    initial: 2
+    min: 0
+    max: 24
+    step: 1
+    mode: slider
+slider_timer_jacuzzi_minutos:
+    name: Slider Timer Jacuzzi Minutos
+    initial: 0
+    min: 0
+    max: 55
+    step: 5
+    mode: slider
+slider_timer_calcomun:
+    name: Slider Timer Calentador comun
+    initial: 30
+    min: 0
+    max: 60
+    step: 5
+    mode: slider
+slider_timer_calprincipal:
+    name: Slider Timer Calentador Principal
+    initial: 20
+    min: 0
+    max: 60
+    step: 5
+    mode: slider
+

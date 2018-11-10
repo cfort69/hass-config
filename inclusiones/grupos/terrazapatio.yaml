@@ -1,0 +1,33 @@
+terraza_patio:
+  name: Terraza Patio
+  view: yes
+  entities:
+      - group.patio
+      - group.terrazapatio
+      - group.terraza
+      - group.exteriorlateral
+      - group.abanicoterraza
+
+
+patio:
+  name: Luz Patio
+  entities:
+      - switch.luz_patio
+terrazapatio:
+  name: "Luz Terraza Patio"
+  entities:
+      - switch.luz_terraza_patio
+
+terraza:
+  name: "Luz Terraza"
+  entities:
+      - switch.luz_terraza
+abanicoterraza:
+  name: "Abanico Terraza"
+  entities:
+      - switch.abanico_terraza
+
+exteriorlateral:
+  name: "Luz Exterior Lateral"
+  entities:
+      - switch.luz_exterior_lateral

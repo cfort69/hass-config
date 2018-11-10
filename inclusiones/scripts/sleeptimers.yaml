@@ -1,0 +1,115 @@
+timer_habitacion_principal:
+  alias: "Timer Sleep Habitacion Principal"
+  sequence:
+    - delay: >-
+        {% set seconds = 0 | int %}
+        {% set minutes = states.input_number.sleep_timer_habitacion_principal.state | int %}
+        {% set hours = 0 | int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: remote.turn_off
+      data:
+        entity_id: remote.habitacion_principal
+    # - service: input_number.set_value 
+    #   entity_id: input_number.sleep_timer_habitacion_principal
+    #   data:
+    #     value: 30
+    - service: switch.turn_off
+      entity_id: switch.sleep_habitacion_principal
+
+timer_piscina:
+  alias: "Timer Piscina"
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/piscina/POWER
+        payload: ON
+    - delay: >-
+        {% set seconds = 0 | int %}
+        {% set minutes = states.input_number.slider_timer_piscina_minutos.state | int %}
+        {% set hours = states.input_number.slider_timer_piscina_horas.state | int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.dash_piscina
+    - service: timer.stop
+      entity_id: timer.piscina_encendido
+    - service: mqtt.publish
+      data_template:
+        topic: sensor/estado/piscina
+        payload: 'OFF'
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/piscina/POWER
+        payload: OFF
+      
+timer_jacuzzi:
+  alias: "Timer Jacuzzi"
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/jacuzzi/POWER
+        payload: 'ON'
+    - delay: >-
+        {% set seconds = 0 | int %}
+        {% set minutes = states.input_number.slider_timer_jacuzzi_minutos.state | int %}
+        {% set hours = states.input_number.slider_timer_jacuzzi_horas.state | int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.dash_jacuzzi
+    - service: mqtt.publish
+      data_template:
+        topic: sensor/estado/jacuzzi
+        payload: 'OFF'
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/jacuzzi/POWER
+        payload: 'OFF'
+
+timer_calcomun:
+  alias: "Timer Calentador Comun"
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/calcomun/POWER
+        payload: 'ON' 
+    - delay: >-
+        {% set seconds = 0 | int %}
+        {% set minutes = states.input_number.slider_timer_calcomun.state | int %}
+        {% set hours = 0 | int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.dash_calcomun
+    - service: mqtt.publish
+      data_template:
+        topic: sensor/estado/calcomun
+        payload: 'OFF'
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/calcomun/POWER
+        payload: 'OFF' 
+
+timer_calprincipal:
+  alias: "Timer Calentador Principal"
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/calprincipal/POWER
+        payload: 'ON' 
+    - delay: >-
+        {% set seconds = 0 | int %}
+        {% set minutes = states.input_number.slider_timer_calprincipal.state | int %}
+        {% set hours = 0 | int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.dash_calprincipal
+    - service: mqtt.publish
+      data_template:
+        topic: sensor/estado/calprincipal
+        payload: 'OFF'
+    - service: mqtt.publish
+      data_template:
+        topic: cmnd/calprincipal/POWER
+        payload: 'OFF'
+
+
+
+        

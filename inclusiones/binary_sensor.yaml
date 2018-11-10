@@ -1,0 +1,59 @@
+  - platform: mqtt
+    state_topic: "wallpanel/estudio/sensor/motion"
+    name: "movimiento_estudio"
+    payload_on: '{"value":true}'
+    payload_off: '{"value":false}'
+    device_class: motion
+  - platform: mqtt
+    name: "Piscina"
+    state_topic: "sensor/estado/piscina"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: plug
+    qos: 0
+  - platform: mqtt
+    name: "Jacuzzi"
+    state_topic: "sensor/estado/jacuzzi"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: plug
+    qos: 0
+  - platform: mqtt
+    name: "Calentador Principal"
+    state_topic: "sensor/estado/calprincipal"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: heat
+    qos: 0
+  - platform: mqtt
+    name: "Calentador Comun"
+    state_topic: "sensor/estado/calcomun"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: heat
+    qos: 0
+  - platform: mqtt
+    name: "Sleep Habitacion Principal"
+    state_topic: "sensor/estado/habitacionprincipal"
+    payload_on: "ON"
+    payload_off: "OFF"
+    icon: mdi:timer
+    # device_class: heat
+    qos: 0
+  # - platform: mqtt
+  #   name: "Velocidad Abanico Habitacion Charles"
+  #   state_topic: "smartthings/Abanico Habitacion Principal/level/state"
+  #   payload_on: '{{ value }}'
+  #   payload_off: '{{ value }}'
+  #   icon: mdi:timer
+  #   qos: 0
+
+
+        # unit_of_measurement: '°C'
+
+  # - platform: template
+  #   sensors:
+  #       piscina_encendido:
+  #       # friendly_name: Bedroom Movement
+  #       value_template: '{{(as_timestamp(now()) - as_timestamp(states.binary_sensor.piscina_encendido.last_changed) < 1800)}}'
+  #       entity_id: sensor.time

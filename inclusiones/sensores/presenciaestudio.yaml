@@ -1,0 +1,6 @@
+  - platform: mqtt
+    name: "Presencia Estudio"
+    state_topic: "/estudio/presencia"
+    payload_on: "TRUE"
+    payload_off: "FALSE"
+    qos: 0

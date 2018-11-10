@@ -1,0 +1,42 @@
+habprincipal:
+  name: Habitacion Principal
+  view: yes
+  entities:
+      - group.luzhabprincipal
+      - group.abanicohabprincipal
+      - group.airehabprincipal
+      - group.actividadeshabprincipal
+      - group.sleephabprincipal
+
+luzhabprincipal:
+  name: Luz
+  entities:
+      - switch.luz_habitacion_principal
+
+abanicohabprincipal:
+  name: Abanico
+  entities:
+      - light.abanico_habitacion_principal
+      # - input_number.velocidad_abanico_habitacion_principal
+
+airehabprincipal:
+  name: Aire
+  entities: 
+      - switch.aire_habitacion_principal
+      - input_number.ac_temperatura_habitacion_principal
+
+actividadeshabprincipal:
+  name: Actividades
+  entities:
+      - switch.harmony_habitacion_principal_sky
+      - switch.harmony_habitacion_principal_dish
+      - switch.harmony_habitacion_principal_smart_tv
+      - switch.harmony_habitacion_principal_fire_tv
+
+sleephabprincipal:
+  name: Sleep
+  entities:
+      # - input_boolean.dash_tvhabprincipal
+      - switch.sleep_habitacion_principal
+      - input_number.sleep_timer_habitacion_principal
+

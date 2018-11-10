@@ -1,0 +1,491 @@
+### Habitacion Principal
+- id: Enciende_Luz_HP
+  alias: Enciente Luz HP
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Habitacion Principal/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_habitacion_principal
+
+- id: Apaga_Luz_HP
+  alias: Apaga Luz HP
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Habitacion Principal/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_habitacion_principal
+
+### Habitacion Charles
+- id: Enciende_Luz_HC
+  alias: Enciente Luz HC
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Habitacion Charles/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_habitacion_charles
+
+- id: Apaga_Luz_HC
+  alias: Apaga Luz HC
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Habitacion Charles/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_habitacion_charles
+
+
+### Marquesina
+- id: Enciende_Luz_Marquesina
+  alias: Enciente Luz Marquesina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Marquesina/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_marquesina
+
+- id: Apaga_Luz_Marquesina
+  alias: Apaga Luz Marquesina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Marquesina/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_marquesina
+
+### Terraza
+- id: Enciende_Luz_Terraza
+  alias: Enciente Luz Terraza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Terraza/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_terraza
+
+- id: Apaga_Luz_Terraza
+  alias: Apaga Luz Terraza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Terraza/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_terraza
+
+### Terraza Patio
+- id: Enciende_Luz_Terraza_Patio
+  alias: Enciente Luz Terraza Patio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Terraza Patio/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_terraza_patio
+
+- id: Apaga_Luz_Terraza_Patio
+  alias: Apaga Luz Terraza Patio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Terraza Patio/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_terraza_patio
+
+### Patio
+- id: Enciende_Luz_Patio
+  alias: Enciente Luz Patio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Patio/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_patio
+
+- id: Apaga_Luz_Patio
+  alias: Apaga Luz Patio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Patio/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_patio
+
+### Comedor
+- id: Enciende_Luz_Comedor
+  alias: Enciente Luz Comedor
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Comedor/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_comedor
+
+- id: Apaga_Luz_Comedor
+  alias: Apaga Luz Comedor
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Comedor/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_comedor
+
+### Comedor Credenza
+- id: Enciende_Luz_Comedor_Credenza
+  alias: Enciente Luz Comedor Credenza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Comedor Credenza/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_comedor_credenza
+
+- id: Apaga_Luz_Comedor_Credenza
+  alias: Apaga Luz Comedor Credenza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Comedor Credenza/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_comedor_credenza
+
+### Sala
+- id: Enciende_Luz_Sala
+  alias: Enciente Luz Sala
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Sala/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_sala
+
+- id: Apaga_Luz_Sala
+  alias: Apaga Luz Sala
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Sala/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_sala
+
+### Cocina
+- id: Enciende_Luz_Cocina
+  alias: Enciente Luz Cocina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Cocina/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_cocina
+
+- id: Apaga_Luz_Cocina
+  alias: Apaga Luz Cocina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Cocina/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_cocina
+
+### Luz Estar 1
+- id: Enciende_Luz_Estar_1
+  alias: Enciente Luz Estar 1
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Estar 1/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_estar_1
+
+- id: Apaga_Luz_Estar_1
+  alias: Apaga Luz Estar 1
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Estar 1/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_estar_1
+
+### Luz Exterior Lateral
+- id: Enciende_Luz_Exterior_Lateral
+  alias: Enciente Luz Exterior Lateral
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Exterior Lateral/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.luz_exterion_lateral
+
+- id: Apaga_Luz_Exterior_Lateral
+  alias: Apaga Luz Exterior Lateral
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Luz Exterior Lateral/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.luz_exterion_lateral
+
+### Abanico Terraza
+- id: Enciende_Abanico_Terraza
+  alias: Enciente Abanico Terraza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Abanico Terraza/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.abanico_terraza
+
+- id: Apaga_Abanico_Terraza
+  alias: Apaga Abanico Terraza
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Abanico Terraza/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.abanico_terraza
+
+### Abanico Cocina
+- id: Enciende_Abanico_Cocina
+  alias: Enciente Abanico Cocina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Abanico Cocina/switch'
+    payload: "on"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.abanico_cocina
+
+- id: Apaga_Abanico_Cocina
+  alias: Apaga Abanico Cocina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Abanico Cocina/switch'
+    payload: "off"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.abanico_cocina
+
+### Aire Habitacion Principal
+- id: Enciende_Aire_Habitacion_Principal
+  alias: Enciente Aire Habitacion Principal
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Habitacion Principal/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.aire_habitacion_principal
+
+- id: Apaga_Aire_Habitacion_Principal
+  alias: Apaga Aire Habitacion Principal
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Habitacion Principal/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.aire_habitacion_principal
+
+### Aire Habitacion Charles
+- id: Enciende_Aire_Habitacion_Charles
+  alias: Enciente Aire Habitacion Charles
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Habitacion Charles/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.aire_habitacion_charles
+
+- id: Apaga_Aire_Habitacion_Charles
+  alias: Apaga Aire Habitacion Charles
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Habitacion Charles/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.aire_habitacion_charles
+
+### Aire Estudio
+- id: Enciende_Aire_Estudio
+  alias: Enciente Aire Estudio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Estudio/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.aire_estudio
+
+- id: Apaga_Aire_Estudio
+  alias: Apaga Aire Estudio
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Aire Estudio/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.aire_estudio
+
+
+### Calentador Principal
+- id: Enciende_Calprincipal
+  alias: Enciente Calprincipal
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Calentador Principal/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.dash_calprincipal
+
+- id: Apaga_Calprincipal
+  alias: Apaga Calprincipal
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Calentador Principal/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.dash_calprincipal
+
+### Calentador Comun
+- id: Enciende_Calcomun
+  alias: Enciente Calcomun
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Calentador Comun/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.dash_calcomun
+
+- id: Apaga_Calcomun
+  alias: Apaga Calcomun
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Calentador Comun/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.dash_calcomun
+
+### Bomba Jacuzzi
+- id: Enciende_Jacuzzi
+  alias: Enciente Jacuzzi
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Jacuzzi/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.dash_jacuzzi
+
+- id: Apaga_Jacuzzi
+  alias: Apaga Jacuzzi
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Jacuzzi/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.dash_jacuzzi
+
+### Bomba Piscina
+- id: Enciende_Piscina
+  alias: Enciente Piscina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Piscina/switch'
+    payload: "on"
+  action:
+  - service: input_bolean.turn_on
+    entity_id: input_bolean.dash_piscina
+
+- id: Apaga_Piscina
+  alias: Apaga Piscina
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'smartthings/Piscina/switch'
+    payload: "off"
+  action:
+  - service: input_bolean.turn_off
+    entity_id: input_bolean.dash_piscina
+
+
+
+
+
+
+

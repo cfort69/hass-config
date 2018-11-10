@@ -1,0 +1,52 @@
+  - platform: mqtt
+    name: "Luz Estudio"
+    state_topic: "smartthings/Luz Estudio/switch/state"
+    command_topic: "smartthings/Luz Estudio/switch/cmd"
+    brightness_state_topic: "smartthings/Luz Estudio/level/state"
+    brightness_command_topic: "smartthings/Luz Estudio/level/cmd"
+    brightness_scale: 99
+    brightness_value_template: '{{ value }}'    
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    # retain: true
+    qos: 0
+  - platform: mqtt
+    name: "Abanico Estudio"
+    state_topic: "smartthings/Abanico Estudio/switch/state"
+    command_topic: "smartthings/Abanico Estudio/switch/cmd"
+    brightness_state_topic: "smartthings/Abanico Estudio/level/state"
+    brightness_command_topic: "smartthings/Abanico Estudio/level/cmd"
+    brightness_scale: 99
+    brightness_value_template: '{{ value }}'    
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    # retain: true
+    qos: 0
+  - platform: mqtt
+    name: "Abanico Habitacion Principal"
+    state_topic: "smartthings/Abanico Habitacion Principal/switch/state"
+    command_topic: "smartthings/Abanico Habitacion Principal/switch/cmd"
+    brightness_state_topic: "smartthings/Abanico Habitacion Principal/level/state"
+    brightness_command_topic: "smartthings/Abanico Habitacion Principal/level/cmd"
+    brightness_scale: 99
+    brightness_value_template: '{{ value }}'    
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    # retain: true
+    qos: 0
+  - platform: mqtt
+    name: "Abanico Habitacion Charles"
+    state_topic: "smartthings/Abanico Habitacion Charles/switch/state"
+    command_topic: "smartthings/Abanico Habitacion Charles/switch/cmd"
+    brightness_state_topic: "smartthings/Abanico Habitacion Charles/level/state"
+    brightness_command_topic: "smartthings/Abanico Habitacion Charles/level/cmd"
+    brightness_scale: 99
+    brightness_value_template: '{{ value }}'    
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    # retain: true
+    qos: 0

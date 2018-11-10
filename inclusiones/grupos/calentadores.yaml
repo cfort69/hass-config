@@ -1,0 +1,21 @@
+calentadores:
+  name: Calentadores
+  view: yes
+  entities:
+      - group.timer_calprincipal
+      - group.timer_calcomun
+
+timer_calprincipal:
+  name: Calentador Principal
+  entities:
+      - input_boolean.dash_calprincipal
+      - input_number.slider_timer_calprincipal
+
+timer_calcomun:
+  name: Calentador Comun
+  entities:
+      - input_boolean.dash_calcomun
+      - input_number.slider_timer_calcomun
+
+
+

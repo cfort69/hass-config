@@ -1,0 +1,222 @@
+homeassistant:
+  name: FamiliaFortHome
+  latitude: 18.55745615135625
+  longitude: -68.37061050017405
+  elevation: 20
+  unit_system: metric
+  time_zone: America/Santo_Domingo
+  customize: !include inclusiones/customize.yaml
+
+config:
+
+frontend:
+
+http:
+  api_password: !secret http_password
+  server_host: forthome.link
+  server_port: 8123
+  ssl_certificate: /etc/ssl/certs/forthome.pem
+  ssl_key: /etc/ssl/certs/forthome_key.pem
+
+api:
+  api_password: !secret http_password
+
+# Checks for available updates
+updater:
+
+# google_assistant:
+#   project_id: someproject-2d0b8
+#   client_id: 2OI9G2DBsDjL3384mRp4h7Kc7sHvUBjXoZ44tKY7skdQutM9Vq7sSyJFvbiljg6J1Zh4O8zf12QEKRur
+#   access_token: HtPFsfOJazyETdz3EPyUizzMD8eGN2ScYTBhf4tcssPVST5ElshISdEJe5mxM8j2pJLT6aBhV3kmUmy1
+#   # agent_user_id: [a string to identify user]
+#   api_key: [a Homegraph API Key generated for the Google Actions project]
+#   exposed_domains:
+#     - switch
+#     - light
+#     - group
+
+# cloud:
+#   google_actions:
+#       filter:
+#         include_entities:
+#           - switch.luz_estudio
+#           - switch.abanico_estudio
+#           - switch.harmony_estudio_sky
+#           - switch.harmony_estudio_apple_tv
+#           - switch.harmony_estudio_blu_ray
+#           - switch.harmony_estudio_fire_tv
+#           - switch.harmony_estudio_iptv_brasil
+#           - input_boolean.aire_estudio
+#           - input_number.ac_temperatura_estudio
+#           - input_number.velocidad_abanico_estudio
+#           - input_number.intensidad_luz_estudio
+#           - script.apaga_todo_estudio
+#           - script.enciende_todo_estudio
+#           - script.sube_volumen_estudio
+#           - script.baja_volumen_estudio
+#         # include_domains:
+#         #   - switch
+#         # exclude_entities:
+#         #   - switch.outside
+#       entity_config:
+#         script.apaga_todo_estudio:
+#           name: apaga todo
+#           aliases:
+#             - apaga
+#             - desconecta
+#           room: estudio
+#         script.enciende_todo_estudio:
+#           name: enciende todo
+#           aliases:
+#             - enciende
+#             - conecta
+#           room: estudio
+#         script.sube_volumen_estudio:
+#           name: Sube Volumen Estudio
+#           aliases:
+#             - sube volumen
+#             - aumenta volumen
+#             - mas volumen
+#           room: estudio
+#         script.baja_volumen_estudio:
+#           name: Baja Volumen Estudio
+#           aliases:
+#             - baja volumen
+#             - disminuye volumen
+#             - menos volumen
+#           room: estudio
+#         switch.luz_estudio:
+#           name: luz
+#           aliases:
+#             - luces
+#             - luz
+#             - iluminacion 
+#             - claridad
+#           room: estudio
+#         switch.abanico_estudio:
+#           name: abanico
+#           aliases:
+#             - abanico
+#             - ventilador
+#           room: estudio
+#         switch.harmony_estudio_sky:
+#           name: sky
+#           aliases:
+#             - sky
+#           room: estudio
+#         switch.harmony_estudio_fire_tv:
+#           name: fire tv
+#           aliases:
+#             - amazon fire
+#             - fire tv
+#           room: estudio
+#         switch.harmony_estudio_iptv_brasil:
+#           name: iptv Brasil
+#           aliases:
+#             - tv brasil
+#             - iptv
+#           room: estudio
+#         switch.harmony_estudio_apple_tv:
+#           name: apple tv
+#           aliases:
+#             - apple tv
+#             - apple
+#           room: estudio
+#         switch.harmony_estudio_blu_ray:
+#           name: blu ray
+#           aliases:
+#             - blu ray
+#             - dvd
+#           room: estudio
+#         input_boolean.aire_estudio:
+#           name: aire estudio
+#           aliases: 
+#             - aire
+#             - aire acondicionado
+#           room: estudio
+#         input_number.ac_temperatura_estudio:
+#           name: temperatura aire
+#           aliases: 
+#             - Temperatura
+#           room: estudio
+#         input_number.velocidad_abanico_estudio:
+#           name: velocidad abanico
+#           aliases:
+#             - velocidad
+#             - intensidad abanico
+#           room: estudio
+#         input_number.intensidad_luz_estudio:
+#           name: intensidad luz
+#           aliases:
+#             - intensidad
+#             - claridad
+#             # - baja la luz
+#             # - sube la luz
+#           room: estudio
+      
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+zeroconf:
+
+map:
+
+homekit:
+
+mqtt:
+  broker: 192.168.50.20
+  keepalive: 60
+  client_id: homeserver
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+
+media_player:
+  - platform: spotify
+    client_id: 3dea3de058404a0bb90e6c04db23e4b7
+    client_secret: 0c0aae69cfc44202892878a91a13fca6
+
+sun:
+
+## presencia
+device_tracker:
+  - platform: locative
+  # - platform: owntracks
+  #   max_gps_accuracy: 200
+
+shell_command:
+    playstation_power_on: 'ps4-waker'
+    playstation_power_off: 'ps4-waker standby'
+
+# Individuales
+remote: !include inclusiones/remote.yaml
+binary_sensor: !include inclusiones/binary_sensor.yaml
+input_boolean: !include inclusiones/input_boolean.yaml
+input_number: !include inclusiones/input_number.yaml
+switch: !include inclusiones/switch.yaml
+light: !include inclusiones/light.yaml
+# climate: !include inclusiones/climate.yaml
+
+# Merge List
+
+automation: !include_dir_merge_list inclusiones/automatizaciones
+sensor: !include_dir_merge_list inclusiones/sensores
+zone: !include_dir_merge_list inclusiones/zonas
+
+# Merge Name
+script: !include_dir_merge_named inclusiones/scripts
+group: !include_dir_merge_named inclusiones/grupos
+
+
+
+
+
+
+
+
+
+
+    
+

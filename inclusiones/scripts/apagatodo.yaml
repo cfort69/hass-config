@@ -1,0 +1,23 @@
+apaga_todo_estudio:
+  alias: "Apaga todo estudio"
+  sequence:
+    - service: remote.turn_off
+      entity_id: remote.estudio
+    - service: light.turn_off
+      entity_id: light.luz_estudio
+    - service: light.turn_off
+      entity_id: light.abanico_estudio
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.aire_estudio 
+    - service: script.turn_off
+      entity_id: script.apaga_todo_estudio
+
+# enciende_todo_estudio:
+#   alias: "Enciende todo estudio"
+#   sequence:
+#     - service: switch.turn_on
+#       entity_id: switch.luz_estudio
+#     - service: switch.turn_on
+#       entity_id: switch.abanico_estudio
+#     - service: script.turn_off
+#       entity_id: script.enciende_todo_estudio

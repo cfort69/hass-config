@@ -1,0 +1,31 @@
+[
+    {
+        "name": "genero",
+        "entries": [
+            {
+                "value": "masculino",
+                "synonyms": [
+                    "hombre",
+                    "tipo",
+                    "ni\u00f1o",
+                    "baron",
+                    "chica",
+                    "muchacho"
+                ]
+            },
+            {
+                "value": "femenino",
+                "synonyms": [
+                    "mujer",
+                    "tipa",
+                    "ni\u00f1a",
+                    "hembra",
+                    "chico",
+                    "muchacha"
+                ]
+            }
+        ],
+        "isEnum": null,
+        "id": "0a7076c5-a906-4ed6-8659-35da848404b0"
+    }
+]

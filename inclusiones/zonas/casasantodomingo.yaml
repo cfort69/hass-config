@@ -1,0 +1,5 @@
+  - name: Casa Santo Domingo
+    latitude: 18.462936
+    longitude: -69.964157
+    radius: 50
+    icon: mdi:home

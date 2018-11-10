@@ -1,0 +1,26 @@
+
+6e340bfc82f14d13a079a6d113928abd:
+  hide_if_away: false
+  icon: mdi:cellphone-iphone
+  mac:
+  name: 6e340bfc82f14d13a079a6d113928abd
+  picture: /local/hildaface.jpg
+  track: true
+  vendor:
+
+1e039e1d85404af3a110d2063d9c9117:
+  hide_if_away: false
+  icon: mdi:cellphone-iphone
+  mac:
+  name: 1e039e1d85404af3a110d2063d9c9117
+  picture: /local/edaface.jpg
+  track: true
+  vendor:
+
+4cc468847a0044d385e470bee09cd06f:
+  hide_if_away: false
+  icon: mdi:cellphone-iphone
+  mac:
+  name: 4cc468847a0044d385e470bee09cd06f
+  picture: /local/charlesface.jpg
+  track: true

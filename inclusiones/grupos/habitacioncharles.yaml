@@ -1,0 +1,24 @@
+habcharles:
+  name: Habitacion Charles
+  view: yes
+  entities:
+      - group.luzhabcharles
+      - group.abanicohabcharles
+      - group.airehabcharles
+
+luzhabcharles:
+  name: Luz
+  entities:
+      - switch.luz_habitacion_charles
+
+abanicohabcharles:
+  name: Abanico
+  entities:
+      - light.abanico_habitacion_charles
+      # - input_number.velocidad_abanico_habitacion_charles
+
+airehabcharles:
+  name: Aire
+  entities: 
+      - switch.aire_habitacion_charles
+      - input_number.ac_temperatura_habitacion_charles 

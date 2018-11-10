@@ -1,0 +1,284 @@
+# input_number.intensidad_luz_estudio:
+#   friendly_name: Intensidad Luz Estudio
+#   icon: mdi:weather-sunny
+light.luz_estudio:
+  friendly_name: On/Off Luz Estudio
+  icon: mdi:lightbulb
+sensor.presencia:
+  friendly_name: Presencia Estudio
+  icon: mdi:run
+input_number.sleep_timer_habitacion_principal:
+  friendly_name: Minutos
+  icon: mdi:clock
+switch.sleep_habitacion_principal:
+  friendly_name: On/Off Sleep
+  icon: mdi:sleep
+
+# input_boolean.dash_tvhabprincipal:
+#   friendly_name: On/Off Timer
+#   icon: mdi:clock
+
+script.timer_habitacion_principal:
+  friendly_name: Sleep
+  icon: mdi:sleep
+  hidden: true
+
+input_boolean.visita:
+  friendly_name: On/Off Visita
+  icon: mdi:hotel
+switch.cargador_estudio:
+  friendly_name: On/Off Cargador Estudio
+  icon: mdi:battery
+switch.luz_habitacion_principal:
+  friendly_name: On/Off Luz Habitacion Principal
+  icon: mdi:lightbulb
+switch.luz_marquesina:
+  friendly_name: On/Off Luz Marquesina
+  icon: mdi:lightbulb
+switch.luz_habitacion_charles:
+  friendly_name: On/Off Luz Habitacion Charles
+  icon: mdi:lightbulb
+switch.luz_patio:
+  friendly_name: On/Off Luz Patio
+  icon: mdi:lightbulb
+switch.luz_terraza_patio:
+  friendly_name: On/Off Luz Terraza Patio
+  icon: mdi:lightbulb
+switch.luz_comedor:
+  friendly_name: On/Off Luz Comedor
+  icon: mdi:lightbulb
+switch.luz_comedor_credenza:
+  friendly_name: On/Off Luz Comedor Credenza
+  icon: mdi:lightbulb
+switch.luz_sala:
+  friendly_name: On/Off Luz Sala
+  icon: mdi:lightbulb
+switch.luz_cocina:
+  friendly_name: On/Off Luz Cocina
+  icon: mdi:lightbulb
+switch.luz_terraza:
+  friendly_name: On/Off Luz Terraza
+  icon: mdi:lightbulb
+switch.luz_estar_2:
+  friendly_name: On/Off Luz Estar 2
+  icon: mdi:lightbulb
+switch.luz_estar_1:
+  friendly_name: On/Off Luz Estar 1
+  icon: mdi:lightbulb
+switch.luz_exterior_lateral:
+  friendly_name: On/Off Luz Exterior Lateral
+  icon: mdi:lightbulb
+switch.luz_area_lavado:
+  friendly_name: On/Off Luz Area Lavado
+  icon: mdi:lightbulb
+
+
+switch.aire_habitacion_principal:
+  friendly_name: On/Off Aire Habitacion Principal
+  icon: mdi:air-conditioner
+switch.aire_estudio:
+  friendly_name: On/Off Aire Estudio
+  icon: mdi:air-conditioner
+switch.aire_habitacion_charles:
+  friendly_name: On/Off Aire Habitacion Charles
+  icon: mdi:air-conditioner
+# input_number.velocidad_abanico_habitacion_principal:
+#   friendly_name: Velocidad
+#   icon: mdi:speedometer
+light.abanico_habitacion_principal:
+  friendly_name: On/Off Abanico Habitacion Principal
+  icon: mdi:fan
+# input_number.velocidad_abanico_estudio:
+#   friendly_name: Velocidad
+#   icon: mdi:speedometer
+light.abanico_estudio:
+  friendly_name: On/Off Abanico Estudio
+  icon: mdi:fan
+# input_number.velocidad_abanico_habitacion_charles:
+#   friendly_name: Velocidad
+#   icon: mdi:speedometer
+light.abanico_habitacion_charles:
+  friendly_name: On/Off Abanico Habitacion Charles
+  icon: mdi:fan
+switch.abanico_terraza:
+  friendly_name: On/Off Abanico Terraza
+  icon: mdi:fan
+
+
+
+switch.abanico_cocina:
+  friendly_name: On/Off Abanico Cocina
+  icon: mdi:fan
+switch.abanico_sala:
+  friendly_name: On/Off Abanico Sala
+  icon: mdi:fan
+switch.abanico_comedor:
+  friendly_name: On/Off Abanico Comedor
+  icon: mdi:fan
+
+switch.harmony_estudio_sky:
+  friendly_name: On/Off Sky Estudio
+  icon: mdi:satellite-variant
+switch.harmony_estudio_apple_tv:
+  friendly_name: On/Off Apple Tv Estudio
+  icon: mdi:apple
+switch.harmony_estudio_iptv_brasil:
+  friendly_name: On/Off TV Brasil Estudio
+  icon: mdi:television-box
+switch.harmony_estudio_fire_tv:
+  friendly_name: On/Off Fire Tv Estudio
+  icon: mdi:amazon
+switch.harmony_estudio_blu_ray:
+  friendly_name: On/Off Blu Ray Estudio
+  icon: mdi:movie-roll
+switch.dash_playstation:
+  friendly_name: Scene Playstation
+  icon: mdi:playstation
+  hidden: true
+switch.harmony_habitacion_principal_sky:
+  friendly_name: On/Off Sky Habitacion Principal
+  icon: mdi:satellite-variant
+switch.harmony_habitacion_principal_dish:
+  friendly_name: On/Off Dish Habitacion Principal
+  icon: mdi:satellite-variant
+switch.harmony_habitacion_principal_smart_tv:
+  friendly_name: On/Off Smart Tv Habitacion Principal
+  icon: mdi:television-guide
+switch.harmony_habitacion_principal_fire_tv:
+  friendly_name: On/Off Fire Tv Habitacion Principal
+  icon: mdi:amazon
+
+input_boolean.presenciacharles:
+  friendly_name: Charles
+  icon: mdi:cellphone-iphone
+  hidden: false
+input_boolean.presenciaeda:
+  friendly_name: Eda
+  icon: mdi:cellphone-iphone
+  hidden: false
+input_boolean.presenciahilda:
+  friendly_name: Hilda
+  icon: mdi:cellphone-iphone
+  hidden: false
+input_boolean.presenciasabrina:
+  friendly_name: Sabrina
+  icon: mdi:cellphone-iphone
+  hidden: false
+input_boolean.presenciacharlesantonio:
+  friendly_name: Charles Antonio
+  icon: mdi:cellphone-iphone
+  hidden: false
+
+
+
+### Piscina
+input_boolean.dash_piscina:
+  friendly_name: "On/Off Piscina"
+  hidden: false
+  icon: mdi:engine
+input_number.slider_timer_piscina_horas:
+  friendly_name: Horas
+input_number.slider_timer_piscina_minutos:
+  friendly_name: Minutos
+
+### Jacuzzi
+input_boolean.dash_jacuzzi:
+  friendly_name: "On/Off Jacuzzi"
+  hidden: false
+  icon: mdi:engine  
+input_number.slider_timer_jacuzzi_horas:
+  friendly_name: Horas
+input_number.slider_timer_jacuzzi_minutos:
+  friendly_name: Minutos
+
+### Calentador Principal
+input_boolean.dash_calprincipal:
+  friendly_name: "On/Off Calentador Principal"
+  hidden: false
+  icon: mdi:temperature-celsius  
+input_number.slider_timer_calcomun:
+  friendly_name: Minutos
+sensor.calprincipal_status:
+  hidden: true
+sensor.calprincipal_tiempo_encendido:
+  icon: mdi:clock
+
+### Calentador Comun
+input_boolean.dash_calcomun:
+  friendly_name: "On/Off Calentador Comun"
+  hidden: false
+  icon: mdi:temperature-celsius
+input_number.slider_timer_calprincipal:
+  friendly_name: Minutos
+
+#######################################################
+
+device_tracker.4cc468847a0044d385e470bee09cd06f:
+  friendly_name: Charles
+  hidden: false
+device_tracker.6e340bfc82f14d13a079a6d113928abd:
+  friendly_name: Hilda
+  hidden: false
+device_tracker.1e039e1d85404af3a110d2063d9c9117:
+  friendly_name: Eda
+  hidden: false
+
+
+group.presencia:
+  icon: mdi:account
+group.abanicos:
+  icon: mdi:fan
+group.aires:
+  icon: mdi:air-conditioner
+group.luces:
+  icon: mdi:lightbulb
+
+
+### ROOM GROUPS ###
+group.habprincipal:
+  icon: mdi:human-male-female
+  order: 1
+group.habcharles:
+  icon: mdi:human-child
+  order: 2
+group.estudio:
+  icon: mdi:theater
+  order: 3
+group.terraza_patio:
+  icon: mdi:pool
+  order: 4
+group.gruposala:
+  icon: mdi:sofa
+  order: 5
+group.timers:
+  icon: mdi:engine
+  order: 6
+group.calentadores:
+  icon: mdi:fire
+  order: 7
+group.grupococina:
+  icon: mdi:fridge
+  order: 8
+group.grupoarealavado:
+  icon: mdi:washing-machine
+  order: 9
+
+
+
+group.cargadores:
+  icon: mdi:car-battery
+group.actividadesharmony:
+  icon: mdi:theater
+group.actividadesharmony2:
+  icon: mdi:hotel
+sensor.principal_battery:
+  icon: mdi:battery
+group.cargadorestudio:
+  icon: mdi:battery
+sensor.estudio_battery:
+  icon: mdi:battery
+group.all_devices:
+  icon: mdi:home-assistant
+group.automatizaciones:
+  icon: mdi:home-automation
+

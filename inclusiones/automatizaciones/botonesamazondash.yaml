@@ -1,0 +1,231 @@
+#############################################
+#       B O T O N E S   M A G I C O S       #
+#############################################
+
+# - id: enciende_script_sleep_habitacion_principal
+#   alias: Enciende Script Sleep Habitacion Principal
+#   hide_entity: true
+#   trigger:
+#   - platform: state
+#     entity_id: input_boolean.dash_tvhabprincipal
+#     from: 'off'
+#     to: 'on'
+#   action:
+#   - service: script.turn_on
+#     entity_id: script.timer_habitacion_principal
+
+# - id: cambia_estado_luz_habitacion_principal_off_on
+#   alias: Cambia Estado Luz Habitacion Principal Off On
+#   trigger:
+#   - platform: mqtt
+#     topic: dashbuttons/dash_luz_habitacion_principal
+#     payload: "TOGGLE"
+#   condition:
+#   - condition: state
+#     entity_id: input_boolean.dash_luz_habitacion_principal
+#     state: 'off'
+#   action:
+#   - service: input_boolean.turn_on
+#     entity_id: input_boolean.dash_luz_habitacion_principal
+
+# - id: cambia_estado_luz_habitacion_principal_on_off
+#   alias: Cambia Estado Luz Habitacion Principal On Off
+#   trigger:
+#   - platform: mqtt
+#     topic: dashbuttons/dash_luz_habitacion_principal
+#     payload: "TOGGLE"
+#   condition:
+#   - condition: state
+#     entity_id: input_boolean.dash_luz_habitacion_principal
+#     state: 'on'
+#   action:
+#   - service: input_boolean.turn_off
+#     entity_id: input_boolean.dash_luz_habitacion_principal
+
+
+    
+# - id: apaga_script_sleep_habitacion_principal
+#   alias: Apaga Script Sleep Habitacion Principal
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.sleep_timer_habitacion_principal
+#     below: 1
+#   action:
+#   - service: script.turn_off
+#     entity_id: script.timer_habitacion_principal
+
+# dash_tvhabprincipal
+
+## Enciende/Apaga playstation cuando se presiona el Amazon Dash
+- id: dash_playstation_on
+  alias: Dash Playstation On
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: switch.dash_playstation
+    from: 'off'
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.harmony_estudio_playstation
+
+- id: dash_playstation_off
+  alias: Dash Playstation Off
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: switch.dash_playstation
+    from: 'on'
+    to: 'off'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.harmony_estudio_playstation   
+
+#Actualiza el estado del sensor de la piscina y el jacuzzi y enciende las bombas cuando cambia el estado del Dash
+- id: activa_sensor_piscina
+  alias: Activa Sensor Piscina
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_piscina
+    from: 'off'
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/piscina
+      payload: 'ON'
+  - service: script.turn_on
+    entity_id: script.timer_piscina
+
+- id: desactiva_sensor_piscina
+  alias: Desactiva Sensor Piscina
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_piscina
+    from: 'on'
+    to: 'off'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/piscina
+      payload: 'OFF'
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/piscina/POWER
+      payload: 'OFF' 
+  - service: script.turn_off
+    entity_id: script.timer_piscina
+
+- id: activa_sensor_jacuzzi
+  alias: Activa Sensor jacuzzi
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_jacuzzi
+    from: 'off'
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/jacuzzi
+      payload: 'ON'
+  - service: script.turn_on
+    entity_id: script.timer_jacuzzi
+
+- id: desactiva_sensor_jacuzzi
+  alias: Desactiva Sensor jacuzzi
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_jacuzzi
+    from: 'on'
+    to: 'off'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/jacuzzi
+      payload: 'OFF'
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/jacuzzi/POWER
+      payload: 'OFF'
+  - service: script.turn_off
+    entity_id: script.timer_jacuzzi
+
+#Estado del sensor de los calentadores 
+- id: activa_sensor_calprincipal
+  alias: Activa Sensor Calentador Principal
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_calprincipal
+    from: 'off'
+    to: 'on'
+  action:
+  - service: timer.start
+    entity_id: timer.segundos
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/calprincipal
+      payload: 'ON'
+  - service: script.turn_on
+    entity_id: script.timer_calprincipal
+
+- id: desactiva_sensor_calprincipal
+  alias: Desactiva Sensor Calentador Principal
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_calprincipal
+    from: 'on'
+    to: 'off'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/calprincipal
+      payload: 'OFF'
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/calprincipal/POWER
+      payload: 'OFF' 
+  - service: script.turn_off
+    entity_id: script.timer_calprincipal
+
+- id: activa_sensor_calcomun
+  alias: Activa Sensor Calentador Comun
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_calcomun
+    from: 'off'
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/calcomun
+      payload: 'ON'
+  - service: script.turn_on
+    entity_id: script.timer_calcomun
+
+- id: desactiva_sensor_calcomun
+  alias: Desactiva Sensor Calentador Comun
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.dash_calcomun
+    from: 'on'
+    to: 'off'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: sensor/estado/calcomun
+      payload: 'OFF'
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/calcomun/POWER
+      payload: 'OFF' 
+  - service: script.turn_off
+    entity_id: script.timer_calcomun

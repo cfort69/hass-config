@@ -1,0 +1,27 @@
+sube_volumen_estudio:
+  alias: "Sube Volumen Estudio"
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.estudio
+        command: VolumeUp
+        device: 39960840
+        delay_secs: 0.6
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.volup
+
+baja_volumen_estudio:
+  alias: "Baja Volumen Estudio"
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.estudio
+        command: VolumeDown
+        device: 39960840
+        delay_secs: 0.6
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.voldn
+
+
+
+        

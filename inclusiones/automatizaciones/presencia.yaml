@@ -1,0 +1,134 @@
+#############################################
+#           P R E S E N C I A               #
+#############################################
+
+- id: presencia_estudio
+  alias: Presencia Estudio
+  hide_entity: false
+  trigger:
+    platform: state
+    entity_id: sensor.presencia_estudio
+    from: "FALSE"
+    to: "TRUE"
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.visita
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.presenciaestudio
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.presenciaestudio
+
+- id: ausencia_estudio
+  alias: Ausencia Estudio
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: sensor.presencia_estudio
+    from: "TRUE"
+    to: "FALSE"
+    for:
+      minutes: 10
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.visita
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.presenciaestudio
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.presenciaestudio
+
+
+## Dispara con cualquier dispositivo y apaga el switch del que corresponda si alguno de los disposivos tiene el estatus adecuado
+## 
+- id: quien_no_en_casa
+  alias: Quien No En Casa
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: device_tracker.dda815f46e504dd0a6aedcc778b08777
+    from: home
+    to: not_home  
+    for: 
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.6b3ff98d9c0d4423adb6322ab414f734
+    from: home
+    to: not_home  
+    for: 
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.6e340bfc82f14d13a079a6d113928abd
+    from: home
+    to: not_home  
+    for: 
+      minutes: 5
+  action:
+  - service: input_boolean.turn_off
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.dda815f46e504dd0a6aedcc778b08777', 'not_home') %} 
+          input_boolean.presenciacharles 
+        {% endif %}
+  - service: input_boolean.turn_off
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.6b3ff98d9c0d4423adb6322ab414f734', 'not_home') %} 
+          input_boolean.presenciaeda 
+        {% endif %}
+  - service: input_boolean.turn_off
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.6e340bfc82f14d13a079a6d113928abd', 'not_home') %} 
+          input_boolean.presenciahilda
+        {% endif %}
+##
+- id: quien_en_casa
+  alias: Quien En Casa
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: device_tracker.dda815f46e504dd0a6aedcc778b08777
+    from: not_home
+    to: home  
+    for: 
+      minutes: 5  
+  - platform: state
+    entity_id: device_tracker.6b3ff98d9c0d4423adb6322ab414f734
+    from: not_home
+    to: home 
+    for: 
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.6e340bfc82f14d13a079a6d113928abd
+    from: not_home
+    to: home 
+    for: 
+      minutes: 5
+  action:
+  - service: input_boolean.turn_on
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.dda815f46e504dd0a6aedcc778b08777', 'home') %} 
+          input_boolean.presenciacharles 
+        {% endif %}
+  - service: input_boolean.turn_on
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.6b3ff98d9c0d4423adb6322ab414f734', 'home') %} 
+          input_boolean.presenciaeda 
+        {% endif %}
+  - service: input_boolean.turn_on
+    data_template:
+      entity_id: >-
+        {% if is_state('device_tracker.6e340bfc82f14d13a079a6d113928abd', 'home') %} 
+          input_boolean.presenciahilda
+        {% endif %}

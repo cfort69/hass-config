@@ -1,0 +1,54 @@
+# Template for defining UserSays examples
+
+# give-color-intent:
+
+#  UserSays:
+#    - My color is blue
+#    - red is my favorite color
+
+#  Annotations:
+#    - blue: sys.color     # maps param value -> entity
+#    - red: sys.color
+
+#  Events:
+#    - event1              # adds a triggerable event named 'event1' to the intent
+
+saludo:
+  UserSays:
+  - hola
+  - hello
+  - inicio
+  - comienza
+  - arranca
+
+da-genero:
+  UserSays:
+  - hombre
+  - soy mujer
+  - soy una chica
+  - soy un baron
+  - soy una hembra
+  - mujer
+  - niña
+  - niño
+  Annotations:
+  - hombre: genero
+  - soy mujer: genero
+  - soy una chica: genero
+  - soy un baron: genero
+  - soy una hembra: genero
+  - mujer: genero
+  - niña: genero
+  - niño: genero
+
+da-color:
+  UserSays:
+  - mi color es el azul
+  - el azul
+  - me gusta el rojo
+  - mi color favorito es el rojo
+  - azul
+  Annotations:
+  - azul: sys.color
+  - rojo: sys.color
+

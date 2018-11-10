@@ -1,0 +1,241 @@
+#############################################
+#  H A B I T A C I O N   P R I N C I P A L  #
+#############################################
+
+- id: enciende_script_sleep_habitacion_principal
+  alias: Enciende Script Sleep Habitacion Principal
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: switch.sleep_habitacion_principal
+    from: 'off'
+    to: 'on'
+  action:
+  - service: script.turn_on
+    entity_id: script.timer_habitacion_principal
+
+## mueve slider aire de acuerdo al estatus mqtt ##
+- id: cambio_mqtt_aire_hp
+  alias: Cambio Mqtt Aire hp
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'broadlink/RM2_bb_0d_64/aire/carrier/set'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.ac_temperatura_habitacion_principal
+      value: "{{ trigger.payload|int }}"
+
+## mueve slider de acuerdo al estatus mqtt ##
+# - id: cambio_mqtt_abanico_hp
+#   alias: Cambio Mqtt abanico hp
+#   hide_entity: true
+#   trigger:
+#     platform: mqtt
+#     topic: 'smartthings/Abanico Habitacion Principal/level'
+#   action:
+#   - service: input_number.set_value
+#     data_template:
+#       entity_id: input_number.velocidad_abanico_habitacion_principal
+#       value: "{{ trigger.payload|int }}"
+
+# - id: cambio_mqtt_abanico_hp_st
+#   alias: Cambio Mqtt abanico hp st
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     topic: 'smartthings/Abanico Habitacion Principal/level'
+#   action:
+#   - service: input_number.set_value
+#     data_template:
+#       entity_id: input_number.velocidad_abanico_habitacion_principal
+#       value: "{{ trigger.payload|int }}"
+
+- id: apaga_abanico_en_10
+  alias: Apaga Abanico en 10
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: switch.aire_habitacion_principal
+    from: 'off'
+    to: 'on'
+    for:
+      minutes: 10
+  action:
+  - service: light.turn_off
+    entity_id: light.abanico_habitacion_principal
+
+## Automatizacion que maneja la velocidad del abanico
+# - id: velocidad_abanico_habitacion_principal
+#   alias: Velocidad Abanico Habitacion Principal
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: 'smartthings/Abanico Habitacion Principal/level'
+#       payload: '{{ states.input_number.velocidad_abanico_habitacion_principal.state | int }}'
+
+# ## Enciende o Apaga el switch si se vario la velocidad del abanico ##
+# - id: enciende_abanico_velocidad_mayor_cero_habitacion_principal
+#   alias: Enciende Abanico Velocidad Mayor Cero Habitacion Principal
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#     above: 0
+#   action:
+#   - service: switch.turn_on
+#     entity_id: switch.abanico_habitacion_principal
+# - id: apaga_abanico_velocidad_cero_habitacion_principal
+#   alias: Apaga Abanico Velocidad Cero Habitacion Principal
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#     below: 1
+#   action:
+#   - service: switch.turn_off
+#     entity_id: switch.abanico_habitacion_principal
+
+## Mueve el slider del abanico si se encendio o apago el switch 
+# - id: enciende_abanico_habitacion_principal_default
+#   alias: Enciende Abanico Habitacion Principal Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.abanico_habitacion_principal
+#     to: 'on'
+#   condition:
+#   - condition: numeric_state
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#     below: 1
+#   action:
+#   - service: input_number.set_value 
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#     data:
+#       value: 60
+
+# - id: apaga_abanico_habitacion_principal_default
+#   alias: Apaga Abanico Habitacion Principal Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.abanico_habitacion_principal
+#     to: 'off'
+#   action:
+#   - service: input_number.set_value 
+#     entity_id: input_number.velocidad_abanico_habitacion_principal
+#     data:
+#       value: 0
+
+## aire y enciende o apaga switch dependiendo de la temperatura   
+# - id: aire_Habitacion_principal_on
+#   alias: Aire Habitacion Principal On
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.aire_habitacion_principal
+#     # from: "off"
+#     to: "on"
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: broadlink/RM2_bb_0d_64/aire/carrier/set
+#       payload: 'on'
+
+# - id: aire_Habitacion_principal_off
+#   alias: Aire Habitacion Principal Off
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.aire_habitacion_principal
+#     from: "on"
+#     to: "off"
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: broadlink/RM2_bb_0d_64/aire/carrier/set
+#       payload: 'off'
+
+- id: temp_aire_Habitacion_principal
+  alias: Aire Habitacion Principal Temperatura
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_number.ac_temperatura_habitacion_principal
+  action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.aire_habitacion_principal
+  - service: mqtt.publish
+    data_template:
+      topic: broadlink/RM2_bb_0d_64/aire/carrier/set
+      payload: '{{ states.input_number.ac_temperatura_habitacion_principal.state | float }}'
+
+## Enciende abanico y apaga aire dias de semana y fines de semana
+- id: enciende_abanico_habitacion_principal_semana
+  alias: Enciende Abanico Habitacion Principal Semana
+  hide_entity: true
+  trigger:
+  - at: 06:10:00
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.aire_habitacion_principal
+      state: "on"
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+  - service: switch.turn_off
+    entity_id: switch.aire_habitacion_principal
+  - service: light.turn_on
+    entity_id: light.abanico_habitacion_principal
+  # - service: input_number.set_value 
+  #   entity_id: input_number.velocidad_abanico_habitacion_principal
+  #   data:
+  #     value: 50
+  - service: mqtt.publish
+    data_template:
+      topic: 'smartthings/Abanico Habitacion Principal/level/cmd'
+      payload: 50
+
+- id: enciende_abanico_habitacion_principal_fin_de_semana
+  alias: Enciende Abanico Habitacion Principal Fin de Semana
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 09:00:00
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.aire_habitacion_principal
+      state: "on"
+    - condition: time
+      weekday:
+      - sat
+      - sun
+  action:
+  - service: switch.turn_off
+    entity_id: switch.aire_habitacion_principal
+  - service: light.turn_off
+    entity_id: light.abanico_habitacion_principal
+  # - service: input_number.set_value 
+  #   entity_id: input_number.velocidad_abanico_habitacion_principal
+  #   data:
+  #     value: 50
+  - service: mqtt.publish
+    data_template:
+      topic: 'smartthings/Abanico Habitacion Principal/level/cmd'
+      payload: 50
+

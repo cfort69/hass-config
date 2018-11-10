@@ -1,0 +1,40 @@
+  - platform: mqtt
+    name: "Abanico Habitacion Charles"
+    state_topic: "smartthings/Abanico Habitacion Charles/level/state"
+    value_template: '{{ value }}'
+  - platform: mqtt
+    name: "Abanico Habitacion Principal"
+    state_topic: "smartthings/Abanico Habitacion Principal/level/state"
+    value_template: '{{ value }}'
+  - platform: mqtt
+    name: "Abanico Estudio"
+    state_topic: "smartthings/Abanico Estudio/level/state"
+    value_template: '{{ value }}'
+  - platform: template
+    sensors:
+      aire_habitacion_charles:
+        friendly_name: "AC/Charles"
+        entity_id: input_number.ac_temperatura_habitacion_charles
+        unit_of_measurement: "°C"
+        value_template: '{{ states.input_number.ac_temperatura_habitacion_charles.state |int }}'
+      aire_habitacion_principal:
+        friendly_name: "AC/Principal"
+        entity_id: input_number.ac_temperatura_habitacion_principal
+        unit_of_measurement: "°C"
+        value_template: '{{ states.input_number.ac_temperatura_habitacion_principal.state |int }}'
+      aire_estudio:
+        friendly_name: "AC/Estudio"
+        entity_id: input_number.ac_temperatura_estudio
+        unit_of_measurement: "°C"
+        value_template: '{{ states.input_number.ac_temperatura_estudio.state |int }}'
+      sleep_habitacion_principal:
+        friendly_name: "Sleep Hab. Principal"
+        entity_id: input_number.sleep_timer_habitacion_principal
+        unit_of_measurement: "°C"
+        value_template: '{{ states.input_number.sleep_timer_habitacion_principal.state |int }}'
+      calentador_principal:
+        friendly_name: "Timer Calentador Principal"
+        entity_id: input_number.slider_timer_calprincipal
+        unit_of_measurement: "°C"
+        value_template: '{{ states.input_number.slider_timer_calprincipal.state |int }}'
+

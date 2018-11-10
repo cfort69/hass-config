@@ -1,0 +1,560 @@
+###################################
+#         E S T U D I O           #
+###################################
+
+## ejecuta scripts para subir y bajar volumen
+# - id: volumen_up_estudio
+#   alias: Volumen UP Estudio
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.volup
+#     # from: "off"
+#     to: "on"
+#   action:
+#   - service: script.turn_on
+#     entity_id: script.sube_volumen_estudio
+
+# - id: volumen_dn_estudio
+#   alias: Volumen DN Estudio
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.voldn
+#     # from: "off"
+#     to: "on"
+#   action:
+#   - service: script.turn_on
+#     entity_id: script.baja_volumen_estudio
+
+## mueve slider de acuerdo al estatus mqtt ##
+# - id: cambio_mqtt_luz_es
+#   alias: Cambio Mqtt Luz es
+#   hide_entity: true
+#   trigger:
+#     platform: mqtt
+#     topic: 'smartthings/Luz Estudio/level'
+#   action:
+#   - service: input_number.set_value
+#     data_template:
+#       entity_id: input_number.intensidad_luz_estudio
+#       value: "{{ trigger.payload|int }}"
+
+# ## Automaizacion que maneja la intensidad de la luz
+# - id: intensidad_luz_estudio
+#   alias: Intesidad Luz Estudio
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_number.intensidad_luz_estudio
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: 'smartthings/Luz Estudio/level'
+#       payload: '{{ states.input_number.intensidad_luz_estudio.state | int }}'
+
+# ## Enciende o Apaga el switch si se vario la intensidad
+# - id: enciende_luz_intensidad_mayor_cero
+#   alias: Enciende Luz Intesidad Mayor Cero
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.intensidad_luz_estudio
+#     above: 0
+#   action:
+#   - service: switch.turn_on
+#     entity_id: switch.luz_estudio
+# - id: apaga_luz_intensidad_cero
+#   alias: Apaga Luz Intesidad Cero
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.intensidad_luz_estudio
+#     below: 1
+#   action:
+#   - service: switch.turn_off
+#     entity_id: switch.luz_estudio
+
+## mueve slider aire de acuerdo al estatus mqtt ##
+- id: cambio_mqtt_aire_es
+  alias: Cambio Mqtt Aire es
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: 'broadlink/RM2_bb_15_21/aire/carrier/set'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.ac_temperatura_estudio
+      value: "{{ trigger.payload|int }}"
+
+## Temperatura del aire y enciende o apaga switch dependiendo de la temperatura 
+# - id: aire_estudio_on
+#   alias: Aire Estudio On
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.aire_estudio
+#     # from: "off"
+#     to: "on"
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: broadlink/RM2_bb_15_21/aire/carrier/set
+      # payload: 'on'
+#   # - service: mqtt.publish
+#   #   data_template:
+#   #     topic: broadlink/RM2_bb_15_21/aire/carrier/set
+#   #     payload: '{{ states.input_number.ac_temperatura_estudio.state | int }}'
+#   # - service: mqtt.publish
+#   #   data_template:
+#   #     topic: broadlink/RM2_bb_15_21/aire/carrier/set
+#   #     payload: '{{ states.climate.aire_estudio.state | float }}'
+
+# - id: aire_estudio_off
+#   alias: Aire Estudio Off
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.aire_estudio
+#     from: "on"
+#     to: "off"
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: broadlink/RM2_bb_15_21/aire/carrier/set
+#       payload: 'off'
+
+- id: temp_aire_estudio
+  alias: Aire Estudio Temperatura
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_number.ac_temperatura_estudio
+  action:
+  # - service: switch.turn_on
+  #   entity_id: switch.aire_estudio
+  - service: mqtt.publish
+    data_template:
+      topic: broadlink/RM2_bb_15_21/aire/carrier/set
+      payload: '{{ states.input_number.ac_temperatura_estudio.state | float }}'
+
+## Mueve slider de la luz, cuando se enciende o apaga el switch
+# - id: Enciende_luz_estudio_default
+#   alias: Enciende Luz Estudio Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.luz_estudio
+#     to: 'on'
+#   condition:
+#   - condition: numeric_state
+#     entity_id: input_number.intensidad_luz_estudio
+#     below: 1
+#   action:
+#   - service: input_number.set_value
+#     entity_id: input_number.intensidad_luz_estudio
+#     data:
+#       value: 60
+# - id: Apaga_luz_estudio_default
+#   alias: Apaga Luz Estudio Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.luz_estudio
+#     to: 'off'
+#   action:
+#   - service: input_number.set_value 
+#     entity_id: input_number.intensidad_luz_estudio
+#     data:
+#       value: 0
+
+## mueve slider de acuerdo al estatus mqtt ##
+# - id: cambio_mqtt_abanico_es
+#   alias: Cambio Mqtt Abanico es
+#   hide_entity: true
+#   trigger:
+#     platform: mqtt
+#     topic: 'smartthings/Abanico Estudio/level'
+#   action:
+#   - service: input_number.set_value
+#     data_template:
+#       entity_id: input_number.velocidad_abanico_estudio
+#       value: "{{ trigger.payload|int }}"
+
+# ## Automatizacion que maneja la velocidad del abanico
+# - id: velocidad_abanico_estudio
+#   alias: Velocidad Abanico Estudio
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: input_number.velocidad_abanico_estudio
+#   action:
+#   - service: mqtt.publish
+#     data_template:
+#       topic: 'smartthings/Abanico Estudio/level'
+#       payload: '{{ states.input_number.velocidad_abanico_estudio.state | int }}'
+
+## Enciende o Apaga el switch si se vario la velocidad del abanico ##
+# - id: enciende_abanico_velocidad_mayor_cero_estudio
+#   alias: Enciende Abanico Velocidad Mayor Cero Estudio
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.velocidad_abanico_estudio
+#     above: 0
+#   action:
+#   - service: switch.turn_on
+#     entity_id: switch.abanico_estudio
+# - id: apaga_abanico_velocidad_cero_estudio
+#   alias: Apaga Abanico Velocidad Cero Estudio
+#   hide_entity: true
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: input_number.velocidad_abanico_estudio
+#     below: 1
+#   action:
+#   - service: switch.turn_off
+#     entity_id: switch.abanico_estudio
+
+
+## Mueve el slider del abanico si se encendio o apago el switch 
+# - id: enciende_abanico_estudio_default
+#   alias: Enciende Abanico Estudio Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.abanico_estudio
+#     to: 'on'
+#   condition:
+#   - condition: numeric_state
+#     entity_id: input_number.velocidad_abanico_estudio
+#     below: 1
+#   action:
+#   - service: input_number.set_value 
+#     entity_id: input_number.velocidad_abanico_estudio
+#     data:
+#       value: 60
+# - id: apaga_abanico_estudio_default
+#   alias: Apaga Abanico Estudio Default
+#   hide_entity: true
+#   trigger:
+#     platform: state
+#     entity_id: switch.abanico_estudio
+#     to: 'off'
+#   action:
+#   - service: input_number.set_value 
+#     entity_id: input_number.velocidad_abanico_estudio
+#     data:
+#       value: 0
+
+# ## Enciende o apaga en el estudio si detecta presencia o ausencia
+# - id: presencia_enciende_luz
+#   alias: Presencia Estudio Enciende Luz
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'off'
+#   #   to: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     # from: "FALSE"
+#     to: "TRUE"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: 'off'
+#       - condition: state
+#         entity_id: script.apaga_todo_estudio
+#         state: 'off'
+#       - condition: state
+#         entity_id: sun.sun
+#         state: 'below_horizon'
+#       - condition: state
+#         entity_id: light.luz_estudio
+#         state: 'off'
+#   action:
+#     - service: light.turn_on
+#       entity_id: light.luz_estudio
+#     # - service: input_number.set_value
+#     #   entity_id: input_number.intensidad_luz_estudio
+#     #   data:
+#     #     value: 70
+#     # - service: mqtt.publish
+#     #   data_template:
+#     #     topic: 'smartthings/Luz Estudio/level'
+#     #     payload: 70
+
+# - id: presencia_enciende_abanico
+#   alias: Presencia Estudio Enciende Abanico
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'off'
+#   #   to: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     # from: "FALSE"
+#     to: "TRUE"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: 'off'
+#       - condition: state
+#         entity_id: script.apaga_todo_estudio
+#         state: 'off'
+#       - condition: state
+#         entity_id: input_boolean.aire_estudio
+#         state: 'off'
+#       - condition: state
+#         entity_id: light.abanico_estudio
+#         state: 'off'
+#   action:
+#     - service: light.turn_on
+#       entity_id: light.abanico_estudio
+#     # - service: input_number.set_value 
+#     #   entity_id: input_number.velocidad_abanico_estudio
+#     #   data:
+#     #     value: 60
+#     # - service: mqtt.publish
+#     #   data_template:
+#     #     topic: 'smartthings/Abanico Estudio/level'
+#     #     payload: 60
+
+# ### Automatizaciones de Ausencia ###
+# - id: ausencia_apaga_luz
+#   alias: Ausencia Estudio Apaga Luz
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'on'
+#   #   to: 'off'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     from: "TRUE"
+#     to: "FALSE"
+#     for:
+#       minutes: 5
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: "off"
+#       - condition: state
+#         entity_id: light.luz_estudio
+#         state: 'on'
+#   action:
+#     - service: light.turn_off
+#       entity_id: light.luz_estudio
+#     # - service: input_number.set_value
+#     #   entity_id: input_number.intensidad_luz_estudio
+#     #   data:
+#     #     value: 0
+#     # - service: mqtt.publish
+#     #   data_template:
+#     #     topic: 'smartthings/Luz Estudio/level'
+#     #     payload: 0        
+
+# - id: ausencia_apaga_abanico
+#   alias: Ausencia Estudio Apaga Abanico
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'on'
+#   #   to: 'off'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     from: "TRUE"
+#     to: "FALSE"
+#     for:
+#       minutes: 5
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: "off"
+#       - condition: state
+#         entity_id: light.abanico_estudio
+#         state: 'on'
+#   action:
+#     - service: light.turn_off
+#       entity_id: light.abanico_estudio
+#     # - service: input_number.set_value 
+#     #   entity_id: input_number.velocidad_abanico_estudio
+#     #   data:
+#     #     value: 0
+#     # - service: mqtt.publish
+#     #   data_template:
+#     #     topic: 'smartthings/Abanico Estudio/level'
+#     #     payload: 0
+
+# - id: ausencia_apaga_actividad
+#   alias: Ausencia Estudio Apaga Actividad
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'on'
+#   #   to: 'off'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     from: "TRUE"
+#     to: "FALSE"
+#     for:
+#       minutes: 5
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: "off"
+#       - condition: state
+#         entity_id: remote.estudio
+#         state: 'on'
+#   action:
+#     - service: remote.turn_off
+#       entity_id: remote.estudio
+
+# - id: ausencia_apaga_aire
+#   alias: Ausencia Estudio Apaga Aire
+#   hide_entity: false
+#   # trigger:
+#   #   platform: state
+#   #   entity_id: input_boolean.presenciaestudio
+#   #   from: 'on'
+#   #   to: 'off'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.presencia_estudio
+#     from: "TRUE"
+#     to: "FALSE"
+#     for:
+#       minutes: 5
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: input_boolean.visita
+#         state: "off"
+#       - condition: state
+#         entity_id: input_boolean.aire_estudio
+#         state: 'on'
+#   action:
+#     - service: input_boolean.turn_off
+#       entity_id: input_boolean.aire_estudio
+
+## Enciende abanico y apaga aire dias de semana y fines de semana
+- id: enciende_abanico_estudio_semana
+  alias: Enciende Abanico Estudio Semana
+  hide_entity: true
+  trigger:
+  - at: 06:10:00
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.visita
+      state: "on"
+    - condition: state
+      entity_id: input_boolean.aire_estudio
+      state: "on"
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.aire_estudio
+  - service: light.turn_on
+    entity_id: light.abanico_estudio
+  # - service: input_number.set_value 
+  #   entity_id: input_number.velocidad_abanico_estudio
+  #   data:
+  #     value: 50
+  # - service: mqtt.publish
+  #   data_template:
+  #     topic: 'smartthings/Abanico Estudio/level'
+  #     payload: 50
+
+- id: enciende_abanico_estudio_fin_de_semana
+  alias: Enciende Abanico Estudio Fin de Semana
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 09:30:00
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.visita
+      state: "on"
+    - condition: state
+      entity_id: input_boolean.aire_estudio
+      state: "on"
+    - condition: time
+      weekday:
+      - sat
+      - sun
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.aire_estudio
+  - service: light.turn_off
+    entity_id: light.abanico_estudio
+  # - service: input_number.set_value 
+  #   entity_id: input_number.velocidad_abanico_estudio
+  #   data:
+  #     value: 50
+  # - service: mqtt.publish
+  #   data_template:
+  #     topic: 'smartthings/Abanico Estudio/level'
+  #     payload: 50
+
+### Cargador TABLET ESTUDIO
+- id: enciende_cargador_estudio
+  alias: Enciende Cargador Estudio
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.estudio_battery
+    # value_template: "{{ state.attributes.battery_level }}"
+    below: 80
+  action:
+    - service: switch.turn_on
+      entity_id: switch.cargador_estudio
+    # - service: notify.charles
+    #   data:
+    #     message: "Cargador Estudio Apagado" 
+
+- id: apaga_cargador_estudio
+  alias: Apaga Cargador Estudio
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.estudio_battery
+    # value_template: "{{ state.attributes.battery_level }}"
+    above: 99
+  action:
+    - service: switch.turn_off
+      entity_id: switch.cargador_estudio
+    # - service: notify.charles
+    #   data:
+    #     message: "Cargador Estudio Apagado" 

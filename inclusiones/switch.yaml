@@ -1,0 +1,382 @@
+    ## Luces
+  # - platform: mqtt
+  #   name: "Luz Estudio"
+  #   state_topic: "smartthings/Luz Estudio/switch"
+  #   command_topic: "smartthings/Luz Estudio/switch"
+  #   payload_on: "on"
+  #   payload_off: "off"
+  #   retain: true
+  - platform: mqtt
+    name: "Luz Habitacion Principal"
+    state_topic: "stat/luzhabitacionprincipal/POWER"
+    command_topic: "cmnd/luzhabitacionprincipal/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Luz Marquesina"
+    state_topic: "stat/marquesina/POWER"
+    command_topic: "cmnd/marquesina/POWER"  
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Luz Habitacion Charles"
+    state_topic: "stat/luzhabitacioncharles/POWER"
+    command_topic: "cmnd/luzhabitacioncharles/POWER" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Luz Patio"
+    state_topic: "stat/patio/POWER"
+    command_topic: "cmnd/patio/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true 
+  - platform: mqtt
+    name: "Luz Terraza Patio"
+    state_topic: "stat/terrazapatio/POWER"
+    command_topic: "cmnd/terrazapatio/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true 
+  - platform: mqtt
+    name: "Luz Comedor"
+    state_topic: "stat/comedor/POWER"
+    command_topic: "cmnd/comedor/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Luz Comedor Credenza"
+    state_topic: "stat/comedorcredenza/POWER"
+    command_topic: "cmnd/comedorcredenza/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true     
+  - platform: mqtt
+    name: "Luz Terraza"
+    state_topic: "stat/terraza/POWER"
+    command_topic: "cmnd/terraza/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Sala"
+    state_topic: "stat/salaestar1/POWER1"
+    command_topic: "cmnd/salaestar1/POWER1"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Estar 1"
+    state_topic: "stat/salaestar1/POWER2"
+    command_topic: "cmnd/salaestar1/POWER2"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Estar 2"
+    state_topic: "stat/estar2/POWER"
+    command_topic: "cmnd/estar2/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Cocina"
+    state_topic: "stat/cocina/POWER"
+    command_topic: "cmnd/cocina/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Exterior Lateral"
+    state_topic: "stat/exteriorlateral/POWER"
+    command_topic: "cmnd/exteriorlateral/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+  - platform: mqtt
+    name: "Luz Area Lavado"
+    state_topic: "stat/arealavado/POWER"
+    command_topic: "cmnd/arealavado/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true  
+
+    ## Piscina y jacuzzi
+  # - platform: mqtt
+  #   name: "Piscina"
+  #   state_topic: "stat/piscina/POWER"
+  #   command_topic: "cmnd/piscina/POWER"    
+  #   payload_on: "ON"
+  #   payload_off: "OFF"
+  #   retain: true     
+  # - platform: mqtt
+  #   name: "Jacuzzi"
+  #   state_topic: "stat/jacuzzi/POWER"
+  #   command_topic: "cmnd/jacuzzi/POWER"    
+  #   payload_on: "ON"
+  #   payload_off: "OFF"
+  #   retain: true   
+
+    ## Calentadores
+  - platform: mqtt
+    name: "Calentador Principal"
+    state_topic: "stat/calprincipal/POWER"
+    command_topic: "cmnd/calprincipal/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true 
+  - platform: mqtt
+    name: "Calentador Comun"
+    state_topic: "stat/calcomun/POWER"
+    command_topic: "cmnd/calcomun/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+    ## Sleep timers
+  - platform: mqtt
+    name: "Sleep Habitacion Principal"
+    state_topic: "sensor/estado/habitacionprincipal"
+    command_topic: "sensor/estado/habitacionprincipal"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true 
+
+    ## Comandos Control Remoto
+  # - platform: mqtt
+  #   name: "HP Sky Mute"
+  #   state_topic: "broadlink-hp/satelite/sky/mute"
+  #   command_topic: "broadlink-hp/satelite/sky/mute"
+  #   payload_on: "replay"
+  #   payload_off: "replay"
+  #   optimistic: false
+  #   qos: 0
+  #   retain: true
+
+
+    ## Abanicos
+  - platform: mqtt
+    name: "Abanico Terraza"
+    state_topic: "stat/abanicoterraza/POWER"
+    command_topic: "cmnd/abanicoterraza/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "Abanico Cocina"
+    state_topic: "stat/abanicococina/POWER"
+    command_topic: "cmnd/abanicococina/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "Abanico Sala"
+    state_topic: "stat/abanicosala/POWER"
+    command_topic: "cmnd/abanicosala/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "Abanico Comedor"
+    state_topic: "stat/abanicocomedor/POWER"
+    command_topic: "cmnd/abanicocomedor/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    qos: 0
+    retain: true
+  # - platform: mqtt
+  #   name: "Abanico Estudio"
+  #   state_topic: "smartthings/Abanico Estudio/switch"
+  #   command_topic: "smartthings/Abanico Estudio/switch"    
+  #   payload_on: "on"
+  #   payload_off: "off"
+  #   retain: true
+  # - platform: mqtt
+  #   name: "Abanico Habitacion Principal"
+  #   state_topic: "smartthings/Abanico Habitacion Principal/switch"
+  #   command_topic: "smartthings/Abanico Habitacion Principal/switch"    
+  #   payload_on: "on"
+  #   payload_off: "off"
+  #   retain: true
+  - platform: mqtt
+    name: "Abanico Habitacion Charles"
+    state_topic: "smartthings/Abanico Habitacion Charles/switch"
+    command_topic: "smartthings/Abanico Habitacion Charles/switch"    
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+
+
+    ## Aires ##
+  - platform: mqtt
+    name: "Aire Estudio"
+    state_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    command_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"    
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+  - platform: mqtt
+    name: "Aire Habitacion Principal"
+    state_topic: "broadlink/RM2_bb_0d_64/aire/carrier/set"
+    command_topic: "broadlink/RM2_bb_0d_64/aire/carrier/set"    
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+  - platform: mqtt
+    name: "Aire Habitacion Charles"
+    state_topic: "broadlink/RM2_bb_12_2d/aire/airmax/set"
+    command_topic: "broadlink/RM2_bb_12_2d/aire/airmax/set"    
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+
+
+  - platform: mqtt
+    name: "Dash Playstation"
+    state_topic: "dash/playstation/set"
+    command_topic: "dash/playstation/set"
+    optimistic: true
+    payload_off: "off"
+    payload_on: "on"
+    retain: true
+
+    ## Cargadores de induccion
+  - platform: mqtt
+    name: "Cargador Estudio"
+    state_topic: "stat/cargadorestudio/POWER"
+    command_topic: "cmnd/cargadorestudio/POWER"    
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true 
+
+  # ## Botones Dash ##
+  - platform: mqtt
+    name: "Dash Luz Habitacion Principal"
+    state_topic: "dashbuttons/dash_luz_habitacion_principal"
+    command_topic: "dashbuttons/dash_luz_habitacion_principal"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  ## Actividades Estudio
+  - platform: template
+    switches:
+      harmony_estudio_sky:
+        value_template: "{% if is_state('sensor.actividad_estudio', 'Sky') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.estudio
+          data:
+            activity: 22844160
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.estudio
+          data:
+            activity: 22844160
+      harmony_estudio_apple_tv:
+        value_template: "{% if is_state('sensor.actividad_estudio', 'Apple TV') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.estudio
+          data:
+            activity: 22844157
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.estudio
+          data:
+            activity: 22844157
+      harmony_estudio_iptv_brasil:
+        value_template: "{% if is_state('sensor.actividad_estudio', 'IPTV Brasil') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.estudio
+          data:
+            activity: 35152838
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.estudio
+          data:
+            activity: 28179459
+      harmony_estudio_fire_tv:
+        value_template: "{% if is_state('sensor.actividad_estudio', 'Fire TV') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.estudio
+          data:
+            activity: 22844156
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.estudio
+          data:
+            activity: 22844156
+      harmony_estudio_blu_ray:
+        value_template: "{% if is_state('sensor.actividad_estudio', 'Blu Ray') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.estudio
+          data:
+            activity: 22844159
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.estudio
+          data:
+            activity: 22844159
+
+### Actividades Habitacion Principal ###
+  - platform: template
+    switches:
+      harmony_habitacion_principal_sky:
+        value_template: "{% if is_state('sensor.actividad_habitacion_principal', 'Sky') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22880955
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22880955
+      harmony_habitacion_principal_dish:
+        value_template: "{% if is_state('sensor.actividad_habitacion_principal', 'Dish') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22866933
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22866933
+      harmony_habitacion_principal_smart_tv:
+        value_template: "{% if is_state('sensor.actividad_habitacion_principal', 'Smart TV') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22867049
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 22867049
+      harmony_habitacion_principal_fire_tv:
+        value_template: "{% if is_state('sensor.actividad_habitacion_principal', 'Fire TV') %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 26956239
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.habitacion_principal
+          data:
+            activity: 26956239

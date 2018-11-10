@@ -1,0 +1,50 @@
+gruposala:
+  name: Sala
+  view: yes
+  entities:
+      - group.marquesina
+      - group.comedor
+      - group.sala
+      - group.comedorcredenza
+      - group.estar1
+      - group.estar2
+      - group.abanicosala
+      - group.abanicocomedor
+
+marquesina:
+  name: Luz Marquesina
+  entities:
+      - switch.luz_marquesina
+
+comedor:
+  name: Luz Comedor
+  entities:
+      - switch.luz_comedor
+comedorcredenza:
+  name: Luz Comedor Credenza
+  entities:
+      - switch.luz_comedor_credenza
+
+sala:
+  name: Luz Sala
+  entities:
+      - switch.luz_sala
+abanicosala:
+  name: Abanico Sala
+  entities:
+      - switch.abanico_sala
+
+abanicocomedor:
+  name: Abanico Comedor
+  entities:
+      - switch.abanico_comedor
+
+estar1:
+  name: Luz Estar 1
+  entities:
+      - switch.luz_estar_1
+
+estar2:
+  name: Luz Estar 2
+  entities:
+      - switch.luz_estar_2

@@ -1,0 +1,39 @@
+estudio:
+  name: Estudio
+  view: yes
+  entities:
+      - group.luzestudio
+      - group.abanicoestudio
+      - group.aireestudio
+      - group.actividadesestudio
+
+luzestudio:
+  name: Luz
+  entities:
+      # - light.luz_estudio
+      - light.luz_estudio
+      # - input_number.intensidad_luz_estudio
+
+abanicoestudio:
+  name: Abanico
+  entities:
+      - light.abanico_estudio
+      # - input_number.velocidad_abanico_estudio
+
+aireestudio:
+  name: Aire
+  entities:
+      # - climate.aire_estudio
+      # - input_boolean.aire_estudio
+      - switch.aire_estudio
+      - input_number.ac_temperatura_estudio
+
+actividadesestudio:
+  name: Actividades
+  entities:
+      - switch.harmony_estudio_sky
+      - switch.harmony_estudio_apple_tv
+      - switch.harmony_estudio_iptv_brasil
+      - switch.harmony_estudio_fire_tv
+      - switch.harmony_estudio_blu_ray
+      

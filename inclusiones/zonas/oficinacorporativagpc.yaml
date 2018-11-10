@@ -1,0 +1,5 @@
+  - name: Oficina Corporativa GPC
+    latitude: 18.555225
+    longitude: -68.372550
+    radius: 30
+    icon: mdi:domain

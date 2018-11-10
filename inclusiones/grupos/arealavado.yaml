@@ -1,0 +1,10 @@
+grupoarealavado:
+  name: Area Lavado
+  view: yes
+  entities:
+      - group.arealavado
+
+arealavado:
+  name: "Luz Area Lavado"
+  entities:
+      - switch.luz_area_lavado

@@ -1,0 +1,19 @@
+  - platform: mqtt
+    name: "Aire Estudio"
+    # modes:
+    #   - "off"
+    #   - "on"
+    mode_command_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    mode_state_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    mode_state_template: "{{ value_json }}"
+    # current_temperature_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    temperature_command_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    power_command_topic: "broadlink/RM2_bb_15_21/aire/carrier/set"
+    temperature_state_template: '{{ value_json }}'
+    temp_step: 1
+    min_temp: 18
+    max_temp: 25
+    # send_if_off: False
+    retain: true
+    qos: 0
+

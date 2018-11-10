@@ -1,0 +1,149 @@
+#################################################################
+#  C A L E N T A D O R E S  Y  B O M B A S  D E  P I S C I N A  #
+#################################################################
+
+# Comun enciende y apaga por la am
+- id: enciende_calentador_comun_manana
+  alias: Enciende Calentador Comun Manana
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '06:30'
+  condition:
+  - condition: state
+    entity_id: input_boolean.dash_calcomun
+    state: 'off'
+  action:
+  - service: input_number.set_value 
+    entity_id: input_number.slider_timer_calcomun
+    data:
+      value: 30
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_calcomun
+
+- id: enciende_calentador_comun_tarde
+  alias: Enciende Calentador Comun Tarde
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '17:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.dash_calcomun
+    state: 'off'
+  action:
+  - service: input_number.set_value 
+    entity_id: input_number.slider_timer_calcomun
+    data:
+      value: 30
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_calcomun
+
+
+- id: activa_dash_calprincipal
+  alias: Activa Dash Calentador Principal
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: switch.calentador_principal
+    from: 'off'
+    to: 'on'
+  action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_calprincipal
+
+- id: desactiva_dash_calprincipal
+  alias: Desactiva Dash Calentador Principal
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: switch.calentador_principal
+    from: 'on'
+    to: 'off'
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.dash_calprincipal
+    
+# Habitacion Principal enciende y apaga por la am
+- id: enciende_calentador_principal_manana
+  alias: Enciende Calentador Principal Manana
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '06:30'
+  condition:
+  - condition: state
+    entity_id: switch.calentador_principal
+    state: 'off'
+  action:
+  - service: input_number.set_value 
+    entity_id: input_number.slider_timer_calprincipal
+    data:
+      value: 30
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_calprincipal
+
+- id: enciende_calentador_principal_tarde
+  alias: Enciende Calentador Principal Tarde
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '17:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.dash_calprincipal
+    state: 'off'
+  action:
+  - service: input_number.set_value 
+    entity_id: input_number.slider_timer_calprincipal
+    data:
+      value: 30
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_calprincipal
+
+# Piscina Enciende y apaga si no esta encendida por el dash
+- id: enciende_piscina
+  alias: Enciende Piscina
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 08:30
+  condition:
+  - condition: state
+    entity_id: input_boolean.dash_piscina
+    state: 'off'
+  action:
+  # - service: input_number.set_value 
+  #   entity_id: input_number.slider_timer_piscina_minutos
+  #   data:
+  #     value: 30
+  # - service: input_number.set_value 
+  #   entity_id: input_number.slider_timer_piscina_horas
+  #   data:
+  #     value: 4
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_piscina
+
+# Jacuzzi enciende y apaga si no esta encendida por el dash
+- id: enciende_jacuzzi
+  alias: Enciende Jacuzzi
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 09:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.dash_jacuzzi
+    state: 'off'
+  action:
+  # - service: input_number.set_value 
+  #   entity_id: input_number.slider_timer_jacuzzi_minutos
+  #   data:
+  #     value: 0
+  # - service: input_number.set_value 
+  #   entity_id: input_number.slider_timer_jacuzzi_horas
+  #   data:
+  #     value: 2
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.dash_jacuzzi
+

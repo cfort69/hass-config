@@ -1,0 +1,89 @@
+presenciacharles:
+  name: Charles
+  # initial: off
+  icon: mdi:cellphone-iphone
+presenciaeda:
+  name: Eda
+  # initial: off
+  icon: mdi:cellphone-iphone
+presenciahilda:
+  name: Hilda
+  # initial: off
+  icon: mdi:cellphone-iphone
+presenciacharlesantonio:
+  name: Chales Antonio
+  # initial: off
+  icon: mdi:cellphone-iphone  
+presenciasabrina:
+  name: Sabrina
+  # initial: off
+  icon: mdi:cellphone-iphone
+presenciaestudio:
+  name: Presencia Estudio
+  # initial: off
+  icon: mdi:theater
+visita:
+  name: Visita
+  # initial: on
+  icon: mdi:hotel
+# volup:
+#   name: volup
+#   initial: off
+# voldn:
+#   name: voldn
+#   initial: off
+
+# aire_habitacion_principal:
+#   name: "Aire Habitacion Principal"
+#   # initial: off
+#   icon: mdi:air-conditioner
+# # aire_estudio:
+# #   name: "Aire Estudio"
+# #   # initial: off
+# #   icon: mdi:air-conditioner
+# aire_habitacion_charles:
+#   name: "Aire Habitacion Charles"
+#   # initial: off
+#   icon: mdi:air-conditioner
+
+#Timers de varios dispositivos
+dash_piscina:
+  name: "Dash Piscina"
+  # initial: off
+  icon: mdi:timer
+dash_jacuzzi:
+  name: "Dash Jacuzzi"
+  # initial: off
+  icon: mdi:timer
+dash_calprincipal:
+  name: "Dash CalPrincipal"
+  # initial: off
+  icon: mdi:timer
+dash_calcomun:
+  name: "Dash CalComun"
+  # initial: off
+  icon: mdi:timer
+# dash_tvhabprincipal:
+#   name: "Dash tvhabprincipal"
+#   # initial: off
+#   icon: mdi:timer
+# dash_luz_habitcion_principal:
+#   name: "Dash Luz Habitacion Principal"
+#   initial: off
+#   icon: mdi:lightbulb
+  
+
+# stopwatch:
+#   name: Stopwatch
+#   initial: off
+# dummy:
+#   name: Dummy
+#   initial: off
+
+# skyhpmute:
+#   name: "Sky HP Mute"
+#   initial: off
+
+# verskyhp:
+#   name: "Ver Sky HP"
+#   initial: off

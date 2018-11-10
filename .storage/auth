@@ -1,0 +1,222 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "cfort"
+                },
+                "id": "b30dbc8f141448b3a62b058e33779767",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "legacy_api_password",
+                "data": {},
+                "id": "56ab1bb0f372448990f54c88aa27c6a5",
+                "user_id": "3fcd4ad6d0ac4d559cda4f79016609c2"
+            }
+        ],
+        "groups": [
+            {
+                "id": "167f68c7f40d46db97ec27ae70f4403a",
+                "name": "All Access"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://192.168.50.231:8123/",
+                "client_name": null,
+                "created_at": "2018-10-01T01:35:13.304004+00:00",
+                "id": "214dd38224b845538b847e9c76599580",
+                "jwt_key": "f68ca05cff7d877e527ccdb1b25e40bd65feb860a0c56063c63b211eb3444c65111d996d08009c8283027a374e219dda98b60e6f13d0f77a039120e1f343f41f",
+                "last_used_at": "2018-10-01T01:35:13.304293+00:00",
+                "last_used_ip": "192.168.50.3",
+                "token": "bdd09a645e9578094618c5d7223e19c57b448928734b9ff377623ae87585d3968be8408315689ff0454ddb73965d9439a3c97d67aedca9043e5f4efae8fa6599",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-05T20:50:28.154184+00:00",
+                "id": "b90d1dcd8e4d42e5a61ad61eddf82a08",
+                "jwt_key": "ac9ef04edec1767611fc56c76cb4d73a62c2baaf089050cdbaa1d10065687994e5ceeda7f2f829a633d2cfa5614e981026b96313cb3ed185fce41f8be981967e",
+                "last_used_at": "2018-11-08T20:23:40.198243+00:00",
+                "last_used_ip": "190.167.196.2",
+                "token": "df90286b5571cf05b0c99b6d2d7bf6b6c8f46a457afd5eb02696d83e7d3048ab838a71f67aab53c1d0152a68d91d2ebc8f486f1a63ccd9f4f02cae5099b8f2f8",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-05T22:38:14.188719+00:00",
+                "id": "276b19b3d02741919270b9f900c8b0ec",
+                "jwt_key": "76e36d7e1562b125c4f776d8dd8672dac48460a01fdc52b78a5494de0d2f0aa38fe13dd5664da2e331ca123e7e7463b8bbd207e169fefbc8396fbd20983d05e0",
+                "last_used_at": "2018-10-15T01:12:41.894775+00:00",
+                "last_used_ip": "148.0.105.92",
+                "token": "838628d65bf496d27d9a115d4c06e40ad940883841e5091a8473c5c587cd004ebbc6d308f831a0511506c774efaf954ebbcaff6866b11ff3485d029963d4aac6",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-07T22:46:47.178086+00:00",
+                "id": "f892f0093ce24dca8abbd91e6637c090",
+                "jwt_key": "881472e8e3ddc3aae5f76c747aa0b8841e78155fefc3fcb2cf6b2b4e7fff509fc3fb44af841f200e021fa1da51b4cc43fb62503dacdc58c8e7b257ef59e9e0eb",
+                "last_used_at": "2018-11-10T02:12:26.368667+00:00",
+                "last_used_ip": "152.0.131.207",
+                "token": "90bf5c743075920dc1488abbd575408d7537d676019de926369e1ecafc52f62ca3eb5cf6c6ebc6cdaabf3490c85f41aa4a75ec124774dc295ff679031c34435f",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-10T11:01:46.311970+00:00",
+                "id": "651e7733b7a54cd5b470f483c8558720",
+                "jwt_key": "e858058d8c24225bf3a5bb657625407a6aa14b700204bffe4703cd80514d70022de9638a6aac906fa26823543dca1af58792b385c8a41dc8f043778c8578089c",
+                "last_used_at": "2018-11-10T10:51:48.150828+00:00",
+                "last_used_ip": "152.0.131.207",
+                "token": "f64ad2f37d7c722d58e67318eff47fd9e105c0e3a39073ca00dd35427f9610ecda5ebb4b725429c68f30128c0a45ed0c582409863b94979ddb9d3b7c1053c9b4",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-17T03:53:30.181537+00:00",
+                "id": "16c8a8ad0df94400aa8c498049f8d0fc",
+                "jwt_key": "c580cffb14019cddb825943265fb3819e78bd027cbf68f9c6dd44e7ba43b5795aeef467cc87114b449b1c307589159353bc97493dec5ad66138b42ea83f975d4",
+                "last_used_at": "2018-11-04T03:58:52.376486+00:00",
+                "last_used_ip": "179.52.214.175",
+                "token": "d302cd40947b334a6adeb16f147c5cb2e72300f00be9b5a5fe24db4200b346e9c10b1f43b786d76229c63f809942cfe1b45ada0130197c007249571c11c4b50c",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://192.168.50.20:8123/",
+                "client_name": null,
+                "created_at": "2018-10-18T04:16:57.109958+00:00",
+                "id": "241f44c563d1430ab6b9468c30d32087",
+                "jwt_key": "3e9b72b9a115f9b59a2aa9361b0efe8c28d58d6b68a201d5323b019f5e65d19fc49d0fb1df88a62d960109eede9451d968d582f24a8b50c013965e68816722b9",
+                "last_used_at": "2018-10-18T04:16:57.110013+00:00",
+                "last_used_ip": "192.168.50.25",
+                "token": "0e2bc85495dc1104bed71f7a1eeae94f6231badc2d66a9c87370667d0debc6d39e722d0af0defca9d9c0746833ee1578094e74d3ed418efd4f7460b5fc14e029",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-18T04:20:13.112323+00:00",
+                "id": "cc44b21fc7194f8dbce1ee124ac17cd5",
+                "jwt_key": "ea67313b57e12188a88a594ec86cdd7f3689b77a6451b449413b8ba04d11be76e1403b93bcf6690eb79c61d6445f4001f70e1c97f1545754a12fff5cbd2e4b9f",
+                "last_used_at": "2018-10-20T23:54:24.046741+00:00",
+                "last_used_ip": "148.101.36.181",
+                "token": "1bec56ee13519bf69666d02b4664ec9355c405fe76dc625af6e11e374fe14b2b0ac5e8b4962d10a5b1dbec21599df850ca0d1f30068a6fb7c8376b23e568b803",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-10-24T14:47:01.398145+00:00",
+                "id": "7cf039f5155649bd95dffd3168e33ef5",
+                "jwt_key": "c8e864ddc7670518b494b6fff49dbc103d12f61b1474af6fa16b1a1904d6b325c27038079158d205dd97ce4e7867d76ee3dee41d3960dd36d751e61ca1831b25",
+                "last_used_at": "2018-10-24T19:49:28.574270+00:00",
+                "last_used_ip": "190.167.196.2",
+                "token": "876dfcf61870aba890f470776368aea6f86ebe40082f8622a098a7bd9c3b406727e59464ef87ca5b66c47feef48f43c165c6746fb8cafac4f0a2cdf038720074",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://forthome.link/",
+                "client_name": null,
+                "created_at": "2018-11-06T14:36:33.410871+00:00",
+                "id": "46f45124d2814a148004c0d84c7e3f65",
+                "jwt_key": "73a509e3aad104572522030479aa3dfc4a6809099b2b9c71013b1e9e7ae59372bf3a2d3e0cae89d24a812a451a7804f52ce2a8498eb7610dfc2ff6851a3b7a9b",
+                "last_used_at": "2018-11-10T08:01:20.349834+00:00",
+                "last_used_ip": "190.211.188.2",
+                "token": "3df059ebf0cff9b6678e5ef7e04e159abc3ae568621f338c7b740147e94f8ffd83f11c5448de1fd1adfb9a3ce97a566523bd68121753d7e77b9f898267a93007",
+                "token_type": "normal",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 315360000.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": "AppDaemon",
+                "created_at": "2018-11-07T13:35:26.951157+00:00",
+                "id": "2b2d918ae47449efa8caa68de9d06906",
+                "jwt_key": "15d1287eebdb56afe35a9171981fa8000b2ffadb1f18ad88d2a2e7c0547a5d7f3130502db92f7488de12270de4d1c37b6d7e4be57976d0065cb714632d5ea637",
+                "last_used_at": "2018-11-07T13:35:26.951250+00:00",
+                "last_used_ip": null,
+                "token": "ab33f010154234ad47f48c5119aa3477968efd35d69ad385029a6c243bc339195f5834d78d534c809357189193f3cee6451bd98d51ad6bcd1508c4e026e999ee",
+                "token_type": "long_lived_access_token",
+                "user_id": "ac2f8403f97d41b48ae066d13ffd57bd"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://192.168.50.20:8123/",
+                "client_name": null,
+                "created_at": "2018-10-18T04:17:14.278850+00:00",
+                "id": "f4f01279664f48e896973589e459c6f1",
+                "jwt_key": "4f206580f9b911bf555eb6101b6d70fdff5b2f4c1ab8334d177e693c485f296476d3656ecf4a13dc1f79b353888348c150132d7a955248c2a1ef7de171c6da36",
+                "last_used_at": "2018-10-18T04:17:14.278893+00:00",
+                "last_used_ip": "192.168.50.25",
+                "token": "66df81dd5eac92a0b2306c9368fe2a108934189f8fc1a6bdb88252b3037fcc2a6976edd4d40c27a70354dc433159ed912184dab70c691823bfa98024e7ca3980",
+                "token_type": "normal",
+                "user_id": "3fcd4ad6d0ac4d559cda4f79016609c2"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "167f68c7f40d46db97ec27ae70f4403a"
+                ],
+                "id": "ac2f8403f97d41b48ae066d13ffd57bd",
+                "is_active": true,
+                "is_owner": true,
+                "name": "Charles Fort",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "167f68c7f40d46db97ec27ae70f4403a"
+                ],
+                "id": "3fcd4ad6d0ac4d559cda4f79016609c2",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Legacy API password user",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}
